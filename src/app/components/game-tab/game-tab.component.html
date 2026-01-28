@@ -27,10 +27,12 @@
             Key Features
           </h4>
           <ul class="grid grid-cols-1 md:grid-cols-2 gap-2">
-            <li *ngFor="let feature of gameFeatures" class="flex items-start">
-              <i class="pi pi-check-circle heading-accent mr-2 mt-1"></i>
-              <span class="text-body">{{ feature }}</span>
-            </li>
+            @for (feature of gameFeatures; track feature) {
+              <li class="flex items-start">
+                <i class="pi pi-check-circle heading-accent mr-2 mt-1"></i>
+                <span class="text-body">{{ feature }}</span>
+              </li>
+            }
           </ul>
         </section>
       </div>
@@ -85,16 +87,18 @@
     </ng-template>
     <ng-template pTemplate="content">
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        <div *ngFor="let screenshot of screenshots" class="screenshot-item">
-          <p-image
-            [src]="screenshot.url"
-            [alt]="screenshot.alt"
-            width="100%"
-            [preview]="true"
-            styleClass="rounded-lg shadow-md hover:shadow-xl transition-shadow cursor-pointer"
-          >
-          </p-image>
-        </div>
+        @for (screenshot of screenshots; track screenshot.url) {
+          <div class="screenshot-item">
+            <p-image
+              [src]="screenshot.url"
+              [alt]="screenshot.alt"
+              width="100%"
+              [preview]="true"
+              styleClass="rounded-lg shadow-md hover:shadow-xl transition-shadow cursor-pointer"
+            >
+            </p-image>
+          </div>
+        }
       </div>
     </ng-template>
   </p-card>
