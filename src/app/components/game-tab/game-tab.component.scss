@@ -1,0 +1,59 @@
+.game-container {
+  .mb-6 {
+    margin-bottom: 1.5rem;
+  }
+
+  :host ::ng-deep {
+    .p-card {
+      box-shadow:
+        0 4px 6px -1px rgba(0, 0, 0, 0.1),
+        0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      border-radius: 0.75rem;
+    }
+
+    .p-card-header {
+      border-top-left-radius: 0.75rem;
+      border-top-right-radius: 0.75rem;
+    }
+
+    .p-carousel {
+      .p-carousel-content {
+        display: flex;
+        align-items: center;
+      }
+
+      .p-carousel-indicators {
+        padding: 1rem;
+      }
+    }
+
+    .p-image {
+      img {
+        border-radius: 0.5rem;
+        transition: transform 0.3s ease;
+      }
+
+      img:hover {
+        transform: scale(1.02);
+      }
+    }
+  }
+
+  .video-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+
+    video {
+      display: block;
+      max-height: 450px;
+      margin: 0 auto;
+    }
+  }
+
+  .screenshot-item {
+    overflow: hidden;
+    border-radius: 0.5rem;
+  }
+}

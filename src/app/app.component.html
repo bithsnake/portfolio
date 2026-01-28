@@ -1,0 +1,49 @@
+<div class="min-h-screen flex flex-col bg-white">
+  <!-- Header -->
+  <header
+    class="bg-gradient-to-r from-primary-600 to-primary-800 text-white py-8 px-4 shadow-lg"
+  >
+    <div class="container mx-auto max-w-6xl">
+      <h1 class="text-4xl md:text-5xl font-bold mb-2">{{ title }}</h1>
+      <p class="text-lg md:text-xl text-primary-100">
+        Full Stack Developer & Game Creator
+      </p>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="flex-grow container mx-auto max-w-6xl px-4 py-8">
+    <p-tabView styleClass="custom-tabview">
+      <p-tabPanel header="About Me">
+        <app-about-tab></app-about-tab>
+      </p-tabPanel>
+      <p-tabPanel header="My Game">
+        <app-game-tab></app-game-tab>
+      </p-tabPanel>
+    </p-tabView>
+  </main>
+
+  <!-- Footer -->
+  <app-footer></app-footer>
+</div>
+<style>
+  /* Custom TabView styling */
+  ::ng-deep .custom-tabview .p-tabview-nav {
+    background: linear-gradient(135deg, #9333ea 0%, #7e22ce 100%);
+  }
+
+  ::ng-deep .custom-tabview .p-tabview-nav li .p-tabview-nav-link {
+    color: white;
+    font-weight: 500;
+  }
+
+  ::ng-deep .custom-tabview .p-tabview-nav li.p-highlight .p-tabview-nav-link {
+    color: white;
+    background: rgba(255, 255, 255, 0.2);
+  }
+
+  ::ng-deep .custom-tabview .p-tabview-panels {
+    background: white;
+    padding: 2rem;
+  }
+</style>
