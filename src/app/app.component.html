@@ -1,11 +1,9 @@
-<div class="min-h-screen flex flex-col bg-white">
+<div class="min-h-screen flex flex-col bg-slate-950 text-slate-100">
   <!-- Header -->
-  <header
-    class="bg-gradient-to-r from-primary-600 to-primary-800 text-white py-8 px-4 shadow-lg"
-  >
+  <header class="app-header py-8 px-4 shadow-lg">
     <div class="container mx-auto max-w-6xl">
       <h1 class="text-4xl md:text-5xl font-bold mb-2">{{ title }}</h1>
-      <p class="text-lg md:text-xl text-primary-100">
+      <p class="text-lg md:text-xl text-slate-200">
         Full Stack Developer & Game Creator
       </p>
     </div>
@@ -43,7 +41,8 @@
   }
 
   ::ng-deep .custom-tabview .p-tabview-panels {
-    background: white;
+    background: var(--app-surface);
+    color: var(--app-text);
     padding: 2rem;
   }
 </style>

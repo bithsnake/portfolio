@@ -8,12 +8,12 @@
       box-shadow:
         0 4px 6px -1px rgba(0, 0, 0, 0.1),
         0 2px 4px -1px rgba(0, 0, 0, 0.06);
-      border-radius: 0.75rem;
+      border-radius: 1.25rem;
     }
 
     .p-card-header {
-      border-top-left-radius: 0.75rem;
-      border-top-right-radius: 0.75rem;
+      border-top-left-radius: 1.25rem;
+      border-top-right-radius: 1.25rem;
     }
 
     .p-carousel {
@@ -29,7 +29,7 @@
 
     .p-image {
       img {
-        border-radius: 0.5rem;
+        border-radius: 1rem;
         transition: transform 0.3s ease;
       }
 
@@ -54,6 +54,6 @@
 
   .screenshot-item {
     overflow: hidden;
-    border-radius: 0.5rem;
+    border-radius: 1rem;
   }
 }

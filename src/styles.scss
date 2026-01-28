@@ -12,5 +12,29 @@ body {
   font-family:
     -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
     Arial, sans-serif;
-  background-color: white;
+  background-color: #18181b;
+  color: #e5e7eb;
+}
+
+:root {
+  --app-bg: #18181b;
+  --app-surface: #18181b;
+  --app-text: #e5e7eb;
+  --app-header-bg: #27272a;
+}
+
+p {
+  color: var(--app-text) !important;
+}
+
+:host::ng-deep,
+h3,
+h4 {
+  color: #34d399 !important;
+}
+
+.app-header,
+.section-header {
+  background: var(--app-header-bg);
+  color: var(--app-text);
 }

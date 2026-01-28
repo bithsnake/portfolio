@@ -6,6 +6,35 @@
     }
   }
 
+  .p-card {
+    background: var(--app-surface);
+    color: var(--app-text);
+    border: 1px solid #1f2937;
+    border-radius: 1rem;
+  }
+
+  .p-card-header {
+    background: var(--app-surface);
+    color: var(--app-text);
+    border-bottom: 1px solid #1f2937;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+  }
+
+  .p-card-content,
+  .p-card-body {
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+  }
+
+  .p-button,
+  .p-tabview,
+  .p-carousel,
+  .p-image img,
+  video {
+    border-radius: 0.9rem;
+  }
+
   // Ensure buttons and cards are responsive
   .p-button {
     transition: all 0.3s ease;
