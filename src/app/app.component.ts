@@ -1,4 +1,4 @@
-import { Component, Inject } from '@angular/core';
+import { Component, Inject, computed, signal } from '@angular/core';
 import { DOCUMENT, isPlatformBrowser } from '@angular/common';
 import { PLATFORM_ID } from '@angular/core';
 import { TabsModule } from 'primeng/tabs';
@@ -20,10 +20,13 @@ import { FooterComponent } from './components/footer/footer.component';
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
-  title = 'Kimmo Savilampi - Portfolio';
-  activeTab: string | number = '0';
+  title = signal('Kimmo Savilampi - Portfolio');
+  activeTab = signal<string | number>('0');
 
-  isDarkMode = false;
+  isDarkMode = signal(false);
+  themeToggleLabel = computed(() =>
+    this.isDarkMode() ? 'Switch to Light' : 'Switch to Dark',
+  );
 
   constructor(
     @Inject(DOCUMENT) private document: Document,
@@ -32,18 +35,14 @@ export class AppComponent {
     this.initializeTheme();
   }
 
-  get themeToggleLabel(): string {
-    return this.isDarkMode ? 'Switch to Light' : 'Switch to Dark';
-  }
-
   toggleTheme(): void {
-    this.isDarkMode = !this.isDarkMode;
+    this.isDarkMode.update((value) => !value);
     this.document.documentElement.classList.toggle(
       'theme-dark',
-      this.isDarkMode,
+      this.isDarkMode(),
     );
     if (isPlatformBrowser(this.platformId)) {
-      localStorage.setItem('theme', this.isDarkMode ? 'dark' : 'light');
+      localStorage.setItem('theme', this.isDarkMode() ? 'dark' : 'light');
     }
   }
 
@@ -54,16 +53,16 @@ export class AppComponent {
 
     const storedTheme = localStorage.getItem('theme');
     if (storedTheme === 'dark' || storedTheme === 'light') {
-      this.isDarkMode = storedTheme === 'dark';
+      this.isDarkMode.set(storedTheme === 'dark');
     } else {
-      this.isDarkMode = window.matchMedia(
-        '(prefers-color-scheme: dark)',
-      ).matches;
+      this.isDarkMode.set(
+        window.matchMedia('(prefers-color-scheme: dark)').matches,
+      );
     }
 
     this.document.documentElement.classList.toggle(
       'theme-dark',
-      this.isDarkMode,
+      this.isDarkMode(),
     );
   }
 }

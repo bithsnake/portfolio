@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, computed, signal } from '@angular/core';
 import { CardModule } from 'primeng/card';
 import { CarouselModule } from 'primeng/carousel';
 import { ImageModule } from 'primeng/image';
@@ -11,10 +11,12 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
   templateUrl: './game-tab.component.html',
   styleUrl: './game-tab.component.scss',
 })
-export class GameTabComponent implements OnInit {
-  gameDescription = `Aria Disconnect is an action-adventure Metroidvania with a cyberpunk theme. You are going to follow Heri's journey to recover from the digital nightmare he has become stuck inside. The year is 2082, you are hooked to a machine, and there is only one way out, to disconnect.`;
+export class GameTabComponent {
+  gameDescription = signal(
+    `Aria Disconnect is an action-adventure Metroidvania with a cyberpunk theme. You are going to follow Heri's journey to recover from the digital nightmare he has become stuck inside. The year is 2082, you are hooked to a machine, and there is only one way out, to disconnect.`,
+  );
 
-  gameFeatures = [
+  gameFeatures = signal([
     'Metroidvania with cyberpunk aesthetic',
     'Exploration and puzzle-solving',
     'Ability and weapon upgrades for optional areas',
@@ -23,11 +25,9 @@ export class GameTabComponent implements OnInit {
     'Story about life and death, told mostly without words',
     'Full controller support (Xbox controllers)',
     'Single-player with Steam Achievements',
-  ];
+  ]);
 
-  videos: { url: SafeResourceUrl; title: string }[] = [];
-
-  screenshots = [
+  screenshots = signal([
     {
       url: 'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1269910/ss_84c2e862a8e41e7c6c1d92bf04ad28e8e4be5c49.600x338.jpg',
       alt: 'Aria Disconnect Screenshot 1',
@@ -52,9 +52,9 @@ export class GameTabComponent implements OnInit {
       url: 'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1269910/ss_1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b.600x338.jpg',
       alt: 'Aria Disconnect Screenshot 6',
     },
-  ];
+  ]);
 
-  responsiveOptions = [
+  responsiveOptions = signal([
     {
       breakpoint: '1024px',
       numVisible: 1,
@@ -70,24 +70,24 @@ export class GameTabComponent implements OnInit {
       numVisible: 1,
       numScroll: 1,
     },
-  ];
+  ]);
 
-  constructor(private sanitizer: DomSanitizer) {}
+  private videoIds = signal([
+    '256827442',
+    '256837375',
+    '256837374',
+    '256802421',
+    '256780649',
+  ]);
 
-  ngOnInit() {
-    // Steam video IDs for Aria Disconnect
-    const videoIds = [
-      '256827442',
-      '256837375',
-      '256837374',
-      '256802421',
-      '256780649',
-    ];
-    this.videos = videoIds.map((id, index) => ({
+  videos = computed(() =>
+    this.videoIds().map((id, index) => ({
       url: this.sanitizer.bypassSecurityTrustResourceUrl(
         `https://cdn.akamai.steamstatic.com/steam/apps/${id}/movie480_vp9.webm`,
       ),
       title: `Aria Disconnect Trailer ${index + 1}`,
-    }));
-  }
+    })),
+  );
+
+  constructor(private sanitizer: DomSanitizer) {}
 }

@@ -20,14 +20,14 @@
             About the Game
           </h3>
           <p class="text-body leading-relaxed mb-4">
-            {{ gameDescription }}
+            {{ gameDescription() }}
           </p>
 
           <h4 class="text-xl font-semibold heading-accent-soft mb-2">
             Key Features
           </h4>
           <ul class="grid grid-cols-1 md:grid-cols-2 gap-2">
-            @for (feature of gameFeatures; track feature) {
+            @for (feature of gameFeatures(); track feature) {
               <li class="flex items-start">
                 <i class="pi pi-check-circle heading-accent mr-2 mt-1"></i>
                 <span class="text-body">{{ feature }}</span>
@@ -50,12 +50,12 @@
     </ng-template>
     <ng-template pTemplate="content">
       <p-carousel
-        [value]="videos"
+        [value]="videos()"
         [numVisible]="1"
         [numScroll]="1"
         [circular]="true"
         [autoplayInterval]="0"
-        [responsiveOptions]="responsiveOptions"
+        [responsiveOptions]="responsiveOptions()"
       >
         <ng-template let-video pTemplate="item">
           <div class="video-item p-4">
@@ -87,7 +87,7 @@
     </ng-template>
     <ng-template pTemplate="content">
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        @for (screenshot of screenshots; track screenshot.url) {
+        @for (screenshot of screenshots(); track screenshot.url) {
           <div class="screenshot-item">
             <p-image
               [src]="screenshot.url"

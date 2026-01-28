@@ -6,7 +6,7 @@
         class="flex flex-col md:flex-row md:items-center md:justify-between gap-6"
       >
         <div>
-          <h1 class="text-4xl md:text-5xl font-bold mb-2">{{ title }}</h1>
+          <h1 class="text-4xl md:text-5xl font-bold mb-2">{{ title() }}</h1>
           <p class="text-lg md:text-xl text-muted">
             Full Stack Developer & Game Creator
           </p>
@@ -18,17 +18,17 @@
               type="button"
               class="p-button-raised p-button-secondary"
               (click)="toggleTheme()"
-              [attr.aria-pressed]="isDarkMode"
-              [attr.aria-label]="themeToggleLabel"
+              [attr.aria-pressed]="isDarkMode()"
+              [attr.aria-label]="themeToggleLabel()"
             >
               <i
                 class="fa-solid"
-                [class.fa-moon]="!isDarkMode"
-                [class.fa-sun]="isDarkMode"
+                [class.fa-moon]="!isDarkMode()"
+                [class.fa-sun]="isDarkMode()"
               ></i>
             </button>
             <span class="mt-2 text-sm" style="color: var(--app-text-muted)">
-              {{ themeToggleLabel }}
+              {{ themeToggleLabel() }}
             </span>
           </div>
         } @placeholder {
@@ -55,8 +55,9 @@
   <main class="flex-grow container mx-auto max-w-6xl px-4 py-8">
     <p-tabs
       class="custom-tabs"
-      [(value)]="activeTab"
-      [attr.data-active]="activeTab"
+      [value]="activeTab()"
+      (valueChange)="activeTab.set($event)"
+      [attr.data-active]="activeTab()"
     >
       <p-tablist>
         <p-tab value="0">About Me</p-tab>
