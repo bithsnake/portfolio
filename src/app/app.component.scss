@@ -30,14 +30,14 @@
   .p-card {
     background: var(--app-surface);
     color: var(--app-text);
-    border: 1px solid #1f2937;
+    border: 1px solid var(--app-border);
     border-radius: 1rem;
   }
 
   .p-card-header {
     background: var(--app-surface);
     color: var(--app-text);
-    border-bottom: 1px solid #1f2937;
+    border-bottom: 1px solid var(--app-border);
     border-top-left-radius: 1rem;
     border-top-right-radius: 1rem;
   }
