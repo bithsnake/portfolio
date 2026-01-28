@@ -62,7 +62,26 @@
 
     &:hover {
       transform: translateY(-2px);
-      box-shadow: 0 6px 16px rgba(56, 189, 248, 0.35);
+      box-shadow: 0 6px 16px rgba(29, 78, 216, 0.25);
+    }
+  }
+
+  .theme-toggle {
+    .p-button {
+      padding: 0.5rem 0.75rem;
+      border-radius: 0.75rem;
+      background: var(--app-surface);
+      border: 1px solid var(--app-border);
+      color: var(--app-text);
+      box-shadow: none;
+    }
+
+    .p-button:hover {
+      box-shadow: 0 6px 16px rgba(29, 78, 216, 0.2);
+    }
+
+    i {
+      font-size: 1.1rem;
     }
   }
 }

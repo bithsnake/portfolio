@@ -17,6 +17,18 @@ body {
 }
 
 :root {
+  --app-bg: #f8fafc;
+  --app-surface: #ffffff;
+  --app-header-bg: #eef2f7;
+  --app-text: #0f172a;
+  --app-text-muted: #475569;
+  --app-accent: #1d4ed8;
+  --app-accent-soft: #60a5fa;
+  --app-accent-2: #2563eb;
+  --app-border: #e2e8f0;
+}
+
+html.theme-dark {
   --app-bg: #0f111a;
   --app-surface: #171b2b;
   --app-header-bg: #1e2438;
@@ -24,11 +36,16 @@ body {
   --app-text-muted: #c7cede;
   --app-accent: #8fb3ff;
   --app-accent-soft: #cdd9f5;
+  --app-accent-2: #6c86d6;
   --app-border: #2a3148;
 }
 
 p {
   color: var(--app-text) !important;
+}
+
+.text-muted {
+  color: var(--app-text-muted) !important;
 }
 
 .heading-accent {
