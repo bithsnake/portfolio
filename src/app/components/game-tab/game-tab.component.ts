@@ -29,27 +29,27 @@ export class GameTabComponent {
 
   screenshots = signal([
     {
-      url: 'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1269910/ss_84c2e862a8e41e7c6c1d92bf04ad28e8e4be5c49.600x338.jpg',
+      url: 'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1269910/ss_84f281dba17b2667fb7c433ea52c30d895952543.600x338.jpg',
       alt: 'Aria Disconnect Screenshot 1',
     },
     {
-      url: 'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1269910/ss_5b7f3d92f71f1f9ae68f7bc95b2be9e7e9cc6dc5.600x338.jpg',
+      url: 'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1269910/ss_f03caed41358f268acd03ad9670f23648cb5dfc4.600x338.jpg',
       alt: 'Aria Disconnect Screenshot 2',
     },
     {
-      url: 'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1269910/ss_c7c58c4c28fa5f8b2c3c1f6c97e6e73c2a7b8e9e.600x338.jpg',
+      url: 'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1269910/ss_b6abf33955ab15e3776afe169652a9281d18ce1d.600x338.jpg',
       alt: 'Aria Disconnect Screenshot 3',
     },
     {
-      url: 'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1269910/ss_3b9e4b2e4a0c8e4c7f1a5b9e8c3d6e7f8a9b0c1d.600x338.jpg',
+      url: 'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1269910/ss_1cc906ef6a44be725abd8d11b2db527ea9c435d6.600x338.jpg',
       alt: 'Aria Disconnect Screenshot 4',
     },
     {
-      url: 'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1269910/ss_7d8e9f0a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e.600x338.jpg',
+      url: 'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1269910/ss_07ac7f9f9fb40c4229446aefedc8258b4d58f2c6.600x338.jpg',
       alt: 'Aria Disconnect Screenshot 5',
     },
     {
-      url: 'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1269910/ss_1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b.600x338.jpg',
+      url: 'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1269910/ss_602a3e11634ccd2e9876aa47ce2477e98539d539.600x338.jpg',
       alt: 'Aria Disconnect Screenshot 6',
     },
   ]);
