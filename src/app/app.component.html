@@ -11,36 +11,42 @@
 
   <!-- Main Content -->
   <main class="flex-grow container mx-auto max-w-6xl px-4 py-8">
-    <p-tabView styleClass="custom-tabview">
-      <p-tabPanel header="About Me">
-        <app-about-tab></app-about-tab>
-      </p-tabPanel>
-      <p-tabPanel header="My Game">
-        <app-game-tab></app-game-tab>
-      </p-tabPanel>
-    </p-tabView>
+    <p-tabs class="custom-tabs" value="0">
+      <p-tablist>
+        <p-tab value="0">About Me</p-tab>
+        <p-tab value="1">My Game</p-tab>
+      </p-tablist>
+      <p-tabpanels>
+        <p-tabpanel value="0">
+          <app-about-tab></app-about-tab>
+        </p-tabpanel>
+        <p-tabpanel value="1">
+          <app-game-tab></app-game-tab>
+        </p-tabpanel>
+      </p-tabpanels>
+    </p-tabs>
   </main>
 
   <!-- Footer -->
   <app-footer></app-footer>
 </div>
 <style>
-  /* Custom TabView styling */
-  ::ng-deep .custom-tabview .p-tabview-nav {
+  /* Custom Tabs styling */
+  ::ng-deep .custom-tabs .p-tablist {
     background: linear-gradient(135deg, #9333ea 0%, #7e22ce 100%);
   }
 
-  ::ng-deep .custom-tabview .p-tabview-nav li .p-tabview-nav-link {
+  ::ng-deep .custom-tabs .p-tab {
     color: white;
     font-weight: 500;
   }
 
-  ::ng-deep .custom-tabview .p-tabview-nav li.p-highlight .p-tabview-nav-link {
+  ::ng-deep .custom-tabs .p-tab.p-highlight {
     color: white;
     background: rgba(255, 255, 255, 0.2);
   }
 
-  ::ng-deep .custom-tabview .p-tabview-panels {
+  ::ng-deep .custom-tabs .p-tabpanels {
     background: var(--app-surface);
     color: var(--app-text);
     padding: 2rem;

@@ -6,6 +6,27 @@
     }
   }
 
+  .custom-tabs {
+    .p-tabpanels {
+      min-height: 400px;
+    }
+  }
+
+  .custom-tabs {
+    border-radius: 0.875rem;
+    overflow: hidden;
+
+    .p-tablist {
+      border-top-left-radius: 0.875rem;
+      border-top-right-radius: 0.875rem;
+    }
+
+    .p-tabpanels {
+      border-bottom-left-radius: 0.875rem;
+      border-bottom-right-radius: 0.875rem;
+    }
+  }
+
   .p-card {
     background: var(--app-surface);
     color: var(--app-text);
@@ -49,7 +70,7 @@
 // Mobile responsive adjustments
 @media (max-width: 768px) {
   :host ::ng-deep {
-    .custom-tabview .p-tabview-panels {
+    .custom-tabs .p-tabpanels {
       padding: 1rem;
     }
   }
