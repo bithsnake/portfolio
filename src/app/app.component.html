@@ -11,25 +11,42 @@
             Full Stack Developer & Game Creator
           </p>
         </div>
-        <div class="theme-toggle flex flex-col items-center md:items-end">
-          <button
-            pButton
-            type="button"
-            class="p-button-raised p-button-secondary"
-            (click)="toggleTheme()"
-            [attr.aria-pressed]="isDarkMode"
-            [attr.aria-label]="themeToggleLabel"
+        @defer (on idle) {
+          <div class="theme-toggle flex flex-col items-center md:items-end">
+            <button
+              pButton
+              type="button"
+              class="p-button-raised p-button-secondary"
+              (click)="toggleTheme()"
+              [attr.aria-pressed]="isDarkMode"
+              [attr.aria-label]="themeToggleLabel"
+            >
+              <i
+                class="fa-solid"
+                [class.fa-moon]="!isDarkMode"
+                [class.fa-sun]="isDarkMode"
+              ></i>
+            </button>
+            <span class="mt-2 text-sm" style="color: var(--app-text-muted)">
+              {{ themeToggleLabel }}
+            </span>
+          </div>
+        } @placeholder {
+          <div
+            class="theme-toggle flex flex-col items-center md:items-end"
+            aria-hidden="true"
           >
-            <i
-              class="fa-solid"
-              [class.fa-moon]="!isDarkMode"
-              [class.fa-sun]="isDarkMode"
-            ></i>
-          </button>
-          <span class="mt-2 text-sm" style="color: var(--app-text-muted)">
-            {{ themeToggleLabel }}
-          </span>
-        </div>
+            <div
+              class="p-button p-button-secondary p-button-raised flex items-center justify-center"
+              style="width: 44px; height: 38px; border-radius: 0.75rem"
+            >
+              <i class="fa-solid fa-spinner fa-spin"></i>
+            </div>
+            <span class="mt-2 text-sm" style="color: var(--app-text-muted)">
+              Loading…
+            </span>
+          </div>
+        }
       </div>
     </div>
   </header>
