@@ -17,14 +17,14 @@ export class GameTabComponent {
   );
 
   gameFeatures = signal([
-    'Metroidvania with cyberpunk aesthetic',
-    'Exploration and puzzle-solving',
-    'Ability and weapon upgrades for optional areas',
-    'Isolated atmospheric theme',
-    'Atmospheric soundtrack',
-    'Story about life and death, told mostly without words',
-    'Full controller support (Xbox controllers)',
-    'Single-player with Steam Achievements',
+    '🦾Metroidvania with cyberpunk aesthetic',
+    '🧩 Exploration and puzzle-solving',
+    '🔧 Ability and weapon upgrades!',
+    '🏝️ Isolated atmospheric theme',
+    '🎵 Atmospheric soundtrack',
+    '📖 Story about life and death, told mostly without words',
+    '🎮 Full controller support (Xbox controllers)',
+    '🏆 Single-player with Steam Achievements',
   ]);
 
   screenshots = signal([
