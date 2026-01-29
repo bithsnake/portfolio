@@ -26,6 +26,7 @@ body {
   --app-accent-soft: #8aa6e8;
   --app-accent-2: #3a62c7;
   --app-border: #cbd2de;
+  --radius: 1rem;
 }
 
 html.theme-dark {
@@ -69,6 +70,11 @@ p {
 .app-shell {
   background: var(--app-bg);
   color: var(--app-text);
+}
+
+.section-header {
+  border-top-left-radius: var(--radius);
+  border-top-right-radius: var(--radius);
 }
 
 a:focus-visible,

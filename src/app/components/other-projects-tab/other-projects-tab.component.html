@@ -1,0 +1,54 @@
+<div class="projects-container">
+  <p-card class="mb-6">
+    <ng-template pTemplate="header">
+      <div class="section-header text-center py-4">
+        <h2 class="text-3xl font-bold heading-accent mb-2">Other Projects</h2>
+        <p class="text-body">
+          A selection of smaller experiments and web games.
+        </p>
+      </div>
+    </ng-template>
+    <ng-template pTemplate="content">
+      <div class="grid gap-6">
+        @for (project of projects(); track project.title) {
+          <p-card class="project-card">
+            <ng-template pTemplate="header">
+              <div class="flex flex-col gap-3 px-5 pt-5">
+                <div
+                  class="flex flex-col md:flex-row md:items-center md:justify-between gap-3"
+                >
+                  <h3 class="text-2xl font-semibold heading-accent">
+                    {{ project.title }}
+                  </h3>
+                  <a
+                    pButton
+                    label="View on GitHub"
+                    icon="pi pi-github"
+                    [href]="project.repoUrl"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="p-button-raised p-button-secondary"
+                  ></a>
+                </div>
+                <p class="text-body">
+                  {{ project.description }}
+                </p>
+              </div>
+            </ng-template>
+            <ng-template pTemplate="content">
+              <div class="iframe-shell">
+                <iframe
+                  class="project-iframe"
+                  [src]="project.safeUrl"
+                  [title]="project.iframeTitle"
+                  loading="lazy"
+                  allowfullscreen
+                ></iframe>
+              </div>
+            </ng-template>
+          </p-card>
+        }
+      </div>
+    </ng-template>
+  </p-card>
+</div>

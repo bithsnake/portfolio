@@ -62,6 +62,7 @@
       <p-tablist>
         <p-tab value="0">About Me</p-tab>
         <p-tab value="1">My Game</p-tab>
+        <p-tab value="2">Other Projects</p-tab>
       </p-tablist>
       <p-tabpanels>
         <p-tabpanel value="0">
@@ -69,6 +70,9 @@
         </p-tabpanel>
         <p-tabpanel value="1">
           <app-game-tab></app-game-tab>
+        </p-tabpanel>
+        <p-tabpanel value="2">
+          <app-other-projects-tab></app-other-projects-tab>
         </p-tabpanel>
       </p-tabpanels>
     </p-tabs>
@@ -111,7 +115,8 @@
   }
 
   ::ng-deep .custom-tabs[data-active="0"] .p-tab[value="0"],
-  ::ng-deep .custom-tabs[data-active="1"] .p-tab[value="1"] {
+  ::ng-deep .custom-tabs[data-active="1"] .p-tab[value="1"],
+  ::ng-deep .custom-tabs[data-active="2"] .p-tab[value="2"] {
     font-weight: 700;
   }
 

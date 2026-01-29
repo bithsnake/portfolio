@@ -1,10 +1,18 @@
-import { Component, Inject, computed, signal } from '@angular/core';
+import {
+  Component,
+  Inject,
+  computed,
+  effect,
+  signal,
+  OnInit,
+} from '@angular/core';
 import { DOCUMENT, isPlatformBrowser } from '@angular/common';
 import { PLATFORM_ID } from '@angular/core';
 import { TabsModule } from 'primeng/tabs';
 import { ButtonModule } from 'primeng/button';
 import { AboutTabComponent } from './components/about-tab/about-tab.component';
 import { GameTabComponent } from './components/game-tab/game-tab.component';
+import { OtherProjectsTabComponent } from './components/other-projects-tab/other-projects-tab.component';
 import { FooterComponent } from './components/footer/footer.component';
 
 @Component({
@@ -14,6 +22,7 @@ import { FooterComponent } from './components/footer/footer.component';
     ButtonModule,
     AboutTabComponent,
     GameTabComponent,
+    OtherProjectsTabComponent,
     FooterComponent,
   ],
   templateUrl: './app.component.html',
@@ -33,6 +42,12 @@ export class AppComponent {
     @Inject(PLATFORM_ID) private platformId: object,
   ) {
     this.initializeTheme();
+    effect(() => {
+      this.activeTab();
+      if (isPlatformBrowser(this.platformId)) {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    });
   }
 
   toggleTheme(): void {
