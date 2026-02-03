@@ -51,6 +51,7 @@ export class AppComponent implements OnInit {
   languageOptions: LanguageOption[] = [
     { code: 'en', labelKey: 'app.language.english', emoji: '🇬🇧' },
     { code: 'sv', labelKey: 'app.language.swedish', emoji: '🇸🇪' },
+    { code: 'fi', labelKey: 'app.language.finnish', emoji: '🇫🇮' },
   ];
 
   selectedLanguage: LanguageOption = this.languageOptions[0];
