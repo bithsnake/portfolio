@@ -1,0 +1,116 @@
+{
+  "app": {
+    "title": "Kimmo Savilampi - Portfolio",
+    "subtitle": "Fullstackutvecklare & spelskapare",
+    "theme": {
+      "switchToLight": "Växla till ljust",
+      "switchToDark": "Växla till mörkt",
+      "loading": "Laddar..."
+    },
+    "tabs": {
+      "about": "Om mig",
+      "game": "Mitt spel",
+      "projects": "Andra projekt"
+    },
+    "language": {
+      "label": "Språk",
+      "english": "Engelska",
+      "swedish": "Svenska"
+    }
+  },
+  "about": {
+    "title": "Om mig",
+    "portraitAlt": "Porträtt av Kimmo Savilampi",
+    "summary": {
+      "title": "Professionell sammanfattning",
+      "text": "Jag är en passionerad fullstackutvecklare och spelskapare med lång erfarenhet av webbutveckling och speldesign. Min kompetens sträcker sig över moderna webbtekniker som Angular, React och .NET, samt spelutveckling i Unity och andra spelmotorer."
+    },
+    "focus": {
+      "text": "Jag fokuserar på att skapa rena, responsiva gränssnitt och bygga pålitliga fullstacklösningar. Jag tycker om att förvandla komplexa idéer till polerade upplevelser som känns snabba och intuitiva."
+    },
+    "skills": {
+      "title": "Tekniska färdigheter",
+      "web": {
+        "title": "Webbutveckling",
+        "item1": "Angular, React, TypeScript",
+        "item2": ".NET Core, C#, ASP.NET",
+        "item3": "HTML5, CSS3, Tailwind CSS",
+        "item4": "RESTful API:er, mikrotjänster"
+      },
+      "game": {
+        "title": "Spelutveckling",
+        "item1": "Game Maker",
+        "item2": "Pixi.js",
+        "item3": "Speldesign & nivådesign",
+        "item4": "2D-grafik & animation",
+        "item5": "Musik & ljudeffekter",
+        "item6": "Steam-integration & publicering"
+      }
+    },
+    "experience": {
+      "title": "Erfarenhet & expertis",
+      "text1": "Med en stark bakgrund inom både företagsutveckling och oberoende spelskapande bidrar jag med ett unikt perspektiv i varje projekt. Min erfarenhet inkluderar att utveckla skalbara webbapplikationer, skapa engagerande användargränssnitt och bygga spel.",
+      "text2": "Jag är särskilt stolt över mitt indiespel \"Aria Disconnect\", ett Metroidvania-liknande actionäventyr med cyberpunktema som visar mina färdigheter inom speldesign, programmering och projektledning."
+    },
+    "connect": {
+      "title": "Kontakta mig"
+    },
+    "buttons": {
+      "outlined": "Testknapp (kontur)",
+      "test": "Testknapp",
+      "save": "Spara",
+      "delete": "Ta bort",
+      "cancel": "Avbryt"
+    },
+    "actions": {
+      "linkedin": "LinkedIn-profil",
+      "steam": "Mitt spel på Steam"
+    }
+  },
+  "game": {
+    "about": {
+      "title": "Om spelet"
+    },
+    "description": "Aria Disconnect är ett actionäventyr i Metroidvania-stil med cyberpunktema. Du följer Heris resa för att ta sig ur den digitala mardröm han fastnat i. Året är 2082, du är uppkopplad till en maskin och det finns bara ett sätt ut: att koppla från.",
+    "features": {
+      "title": "Nyckelfunktioner",
+      "item1": "🦾 Metroidvania med cyberpunkestetik",
+      "item2": "🧩 Utforskning och pussellösning",
+      "item3": "🔧 Förmåge- och vapenuppgraderingar!",
+      "item4": "🏝️ Isolerat, atmosfäriskt tema",
+      "item5": "🎵 Atmosfäriskt soundtrack",
+      "item6": "📖 Berättelse om liv och död, mestadels utan ord",
+      "item7": "🎮 Fullt handkontrollstöd (Xbox-kontroller)",
+      "item8": "🏆 Ensamspel med Steam-prestationer"
+    },
+    "trailers": {
+      "title": "Speltrailers & gameplay"
+    },
+    "video": {
+      "unsupported": "Din webbläsare stöder inte videouppspelning."
+    },
+    "trailerTitle": "Aria Disconnect-trailer {{index}}",
+    "screenshots": {
+      "title": "Skärmdumpar",
+      "alt1": "Aria Disconnect skärmdump 1",
+      "alt2": "Aria Disconnect skärmdump 2",
+      "alt3": "Aria Disconnect skärmdump 3",
+      "alt4": "Aria Disconnect skärmdump 4",
+      "alt5": "Aria Disconnect skärmdump 5",
+      "alt6": "Aria Disconnect skärmdump 6"
+    }
+  },
+  "projects": {
+    "title": "Andra projekt",
+    "subtitle": "Ett urval av mindre experiment och webbspel.",
+    "viewOnGithub": "Visa på GitHub",
+    "spinMaster": {
+      "title": "Spin Master",
+      "description": "Ett snabbt arkadliknande spinner-spel med enkla kontroller. Byggt i Pixi.js",
+      "iframeTitle": "Spin Master live-demo"
+    }
+  },
+  "footer": {
+    "copyright": "© {{year}} Kimmo Savilampi. Alla rättigheter förbehållna."
+  }
+}

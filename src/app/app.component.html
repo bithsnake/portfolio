@@ -6,45 +6,95 @@
         class="flex flex-col md:flex-row md:items-center md:justify-between gap-6"
       >
         <div>
-          <h1 class="text-4xl md:text-5xl font-bold mb-2">{{ title() }}</h1>
+          <h1 class="text-4xl md:text-5xl font-bold mb-2">
+            {{ "app.title" | translate }}
+          </h1>
           <p class="text-lg md:text-xl text-muted">
-            Full Stack Developer & Game Creator
+            {{ "app.subtitle" | translate }}
           </p>
         </div>
         @defer (on idle) {
-          <div class="theme-toggle flex flex-col items-center md:items-end">
-            <button
-              pButton
-              type="button"
-              class="p-button-raised p-button-secondary"
-              (click)="toggleTheme()"
-              [attr.aria-pressed]="isDarkMode()"
-              [attr.aria-label]="themeToggleLabel()"
+          <div
+            class="header-controls flex flex-wrap items-start md:items-center gap-4"
+          >
+            <div class="theme-toggle flex flex-col items-center md:items-end">
+              <button
+                pButton
+                type="button"
+                class="p-button-raised p-button-secondary"
+                (click)="toggleTheme()"
+                [attr.aria-pressed]="isDarkMode()"
+                [attr.aria-label]="themeToggleKey() | translate"
+              >
+                <i
+                  class="fa-solid"
+                  [class.fa-moon]="!isDarkMode()"
+                  [class.fa-sun]="isDarkMode()"
+                ></i>
+              </button>
+              <span class="mt-2 text-sm" style="color: var(--app-text-muted)">
+                {{ themeToggleKey() | translate }}
+              </span>
+            </div>
+
+            <div
+              class="language-select flex flex-col items-center md:items-end"
             >
-              <i
-                class="fa-solid"
-                [class.fa-moon]="!isDarkMode()"
-                [class.fa-sun]="isDarkMode()"
-              ></i>
-            </button>
-            <span class="mt-2 text-sm" style="color: var(--app-text-muted)">
-              {{ themeToggleLabel() }}
-            </span>
+              <p-dropdown
+                [options]="languageOptions"
+                [(ngModel)]="selectedLanguage"
+                (onChange)="onLanguageChange($event.value)"
+                [showClear]="false"
+                [styleClass]="'language-dropdown'"
+                [ariaLabel]="'app.language.label' | translate"
+              >
+                <ng-template pTemplate="selectedItem" let-selected>
+                  <div class="language-option">
+                    <span class="language-emoji">{{ selected?.emoji }}</span>
+                    <span>{{ selected?.labelKey | translate }}</span>
+                  </div>
+                </ng-template>
+                <ng-template pTemplate="item" let-option>
+                  <div class="language-option">
+                    <span class="language-emoji">{{ option.emoji }}</span>
+                    <span>{{ option.labelKey | translate }}</span>
+                  </div>
+                </ng-template>
+              </p-dropdown>
+              <span class="mt-2 text-sm" style="color: var(--app-text-muted)">
+                {{ "app.language.label" | translate }}
+              </span>
+            </div>
           </div>
         } @placeholder {
           <div
-            class="theme-toggle flex flex-col items-center md:items-end"
+            class="header-controls flex flex-wrap items-start md:items-center gap-4"
             aria-hidden="true"
           >
-            <div
-              class="p-button p-button-secondary p-button-raised flex items-center justify-center"
-              style="width: 44px; height: 38px; border-radius: 0.75rem"
-            >
-              <i class="fa-solid fa-spinner fa-spin"></i>
+            <div class="theme-toggle flex flex-col items-center md:items-end">
+              <div
+                class="p-button p-button-secondary p-button-raised flex items-center justify-center"
+                style="width: 44px; height: 38px; border-radius: 0.75rem"
+              >
+                <i class="fa-solid fa-spinner fa-spin"></i>
+              </div>
+              <span class="mt-2 text-sm" style="color: var(--app-text-muted)">
+                {{ "app.theme.loading" | translate }}
+              </span>
             </div>
-            <span class="mt-2 text-sm" style="color: var(--app-text-muted)">
-              Loading…
-            </span>
+            <div
+              class="language-select flex flex-col items-center md:items-end"
+            >
+              <div
+                class="p-button p-button-secondary p-button-raised flex items-center justify-center"
+                style="width: 150px; height: 38px; border-radius: 0.75rem"
+              >
+                <i class="fa-solid fa-spinner fa-spin"></i>
+              </div>
+              <span class="mt-2 text-sm" style="color: var(--app-text-muted)">
+                {{ "app.theme.loading" | translate }}
+              </span>
+            </div>
           </div>
         }
       </div>
@@ -60,9 +110,9 @@
       [attr.data-active]="activeTab()"
     >
       <p-tablist>
-        <p-tab value="0">About Me</p-tab>
-        <p-tab value="1">My Game</p-tab>
-        <p-tab value="2">Other Projects</p-tab>
+        <p-tab value="0">{{ "app.tabs.about" | translate }}</p-tab>
+        <p-tab value="1">{{ "app.tabs.game" | translate }}</p-tab>
+        <p-tab value="2">{{ "app.tabs.projects" | translate }}</p-tab>
       </p-tablist>
       <p-tabpanels>
         <p-tabpanel value="0">

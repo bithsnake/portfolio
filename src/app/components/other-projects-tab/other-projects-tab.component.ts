@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { CardModule } from 'primeng/card';
 import { ButtonModule } from 'primeng/button';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+import { TranslateModule } from '@ngx-translate/core';
 
 type ProjectCard = {
   title: string;
@@ -15,25 +16,28 @@ type ProjectCard = {
 
 @Component({
   selector: 'app-other-projects-tab',
-  imports: [CommonModule, CardModule, ButtonModule],
+  imports: [CommonModule, CardModule, ButtonModule, TranslateModule],
   templateUrl: './other-projects-tab.component.html',
   styleUrl: './other-projects-tab.component.scss',
 })
 export class OtherProjectsTabComponent {
   private rawProjects = signal([
     {
-      title: 'Spin Master',
-      description:
-        'A fast, arcade-style spinner game with simple controls. Built in Pixi.js',
+      titleKey: 'projects.spinMaster.title',
+      descriptionKey: 'projects.spinMaster.description',
       liveUrl: 'https://bithsnake.github.io/spin-master-2/',
       repoUrl: 'https://github.com/bithsnake/spin-master-2',
-      iframeTitle: 'Spin Master live demo',
+      iframeTitleKey: 'projects.spinMaster.iframeTitle',
     },
   ]);
 
   projects = computed<ProjectCard[]>(() =>
     this.rawProjects().map((project) => ({
-      ...project,
+      title: project.titleKey,
+      description: project.descriptionKey,
+      liveUrl: project.liveUrl,
+      repoUrl: project.repoUrl,
+      iframeTitle: project.iframeTitleKey,
       safeUrl: this.sanitizer.bypassSecurityTrustResourceUrl(project.liveUrl),
     })),
   );

@@ -1,0 +1,116 @@
+{
+  "app": {
+    "title": "Kimmo Savilampi - Portfolio",
+    "subtitle": "Full Stack Developer & Game Creator",
+    "theme": {
+      "switchToLight": "Switch to Light",
+      "switchToDark": "Switch to Dark",
+      "loading": "Loading..."
+    },
+    "tabs": {
+      "about": "About Me",
+      "game": "My Game",
+      "projects": "Other Projects"
+    },
+    "language": {
+      "label": "Language",
+      "english": "English",
+      "swedish": "Swedish"
+    }
+  },
+  "about": {
+    "title": "About Me",
+    "portraitAlt": "Portrait of Kimmo Savilampi",
+    "summary": {
+      "title": "Professional Summary",
+      "text": "I am a passionate Full Stack Developer and Game Creator with extensive experience in web development and game design. My expertise spans across modern web technologies, including Angular, React, and .NET, as well as game development using Unity and various game engines."
+    },
+    "focus": {
+      "text": "I focus on crafting clean, responsive interfaces and building reliable full-stack systems. I enjoy turning complex ideas into polished experiences that feel fast and intuitive."
+    },
+    "skills": {
+      "title": "Technical Skills",
+      "web": {
+        "title": "Web Development",
+        "item1": "Angular, React, TypeScript",
+        "item2": ".NET Core, C#, ASP.NET",
+        "item3": "HTML5, CSS3, Tailwind CSS",
+        "item4": "RESTful APIs, Microservices"
+      },
+      "game": {
+        "title": "Game Development",
+        "item1": "Game Maker",
+        "item2": "Pixi.js",
+        "item3": "Game Design & Level Design",
+        "item4": "2D Graphics & Animation",
+        "item5": "Music & Sound Effects",
+        "item6": "Steam Integration & Publishing"
+      }
+    },
+    "experience": {
+      "title": "Experience & Expertise",
+      "text1": "With a strong background in both enterprise software development and independent game creation, I bring a unique perspective to every project. My experience includes developing scalable web applications, creating engaging user interfaces, and building games.",
+      "text2": "I'm particularly proud of my indie game \"Aria Disconnect,\" a Metroidvania-style action-adventure game with a cyberpunk theme, showcasing my abilities in game design, programming, and project management."
+    },
+    "connect": {
+      "title": "Connect With Me"
+    },
+    "buttons": {
+      "outlined": "Test Button (Outlined)",
+      "test": "Test Button",
+      "save": "Save",
+      "delete": "Delete",
+      "cancel": "Cancel"
+    },
+    "actions": {
+      "linkedin": "LinkedIn Profile",
+      "steam": "My Game on Steam"
+    }
+  },
+  "game": {
+    "about": {
+      "title": "About the Game"
+    },
+    "description": "Aria Disconnect is an action-adventure Metroidvania with a cyberpunk theme. You are going to follow Heri's journey to recover from the digital nightmare he has become stuck inside. The year is 2082, you are hooked to a machine, and there is only one way out, to disconnect.",
+    "features": {
+      "title": "Key Features",
+      "item1": "🦾 Metroidvania with cyberpunk aesthetic",
+      "item2": "🧩 Exploration and puzzle-solving",
+      "item3": "🔧 Ability and weapon upgrades!",
+      "item4": "🏝️ Isolated atmospheric theme",
+      "item5": "🎵 Atmospheric soundtrack",
+      "item6": "📖 Story about life and death, told mostly without words",
+      "item7": "🎮 Full controller support (Xbox controllers)",
+      "item8": "🏆 Single-player with Steam Achievements"
+    },
+    "trailers": {
+      "title": "Game Trailers & Gameplay"
+    },
+    "video": {
+      "unsupported": "Your browser does not support the video tag."
+    },
+    "trailerTitle": "Aria Disconnect Trailer {{index}}",
+    "screenshots": {
+      "title": "Screenshots",
+      "alt1": "Aria Disconnect Screenshot 1",
+      "alt2": "Aria Disconnect Screenshot 2",
+      "alt3": "Aria Disconnect Screenshot 3",
+      "alt4": "Aria Disconnect Screenshot 4",
+      "alt5": "Aria Disconnect Screenshot 5",
+      "alt6": "Aria Disconnect Screenshot 6"
+    }
+  },
+  "projects": {
+    "title": "Other Projects",
+    "subtitle": "A selection of smaller experiments and web games.",
+    "viewOnGithub": "View on GitHub",
+    "spinMaster": {
+      "title": "Spin Master",
+      "description": "A fast, arcade-style spinner game with simple controls. Built in Pixi.js",
+      "iframeTitle": "Spin Master live demo"
+    }
+  },
+  "footer": {
+    "copyright": "© {{year}} Kimmo Savilampi. All rights reserved."
+  }
+}

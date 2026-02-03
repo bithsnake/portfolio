@@ -1,10 +1,12 @@
 import { Component, signal } from '@angular/core';
 import { CardModule } from 'primeng/card';
 import { ButtonModule } from 'primeng/button';
+import { ButtonGroupModule } from 'primeng/buttongroup';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-about-tab',
-  imports: [CardModule, ButtonModule],
+  imports: [CardModule, ButtonModule, ButtonGroupModule, TranslateModule],
   templateUrl: './about-tab.component.html',
   styleUrl: './about-tab.component.scss',
 })
