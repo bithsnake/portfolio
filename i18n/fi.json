@@ -1,0 +1,118 @@
+{
+  "app": {
+    "title": "Kimmo Savilampi - Portfolio",
+    "subtitle": "Full Stack -kehittäjä & pelintekijä",
+    "theme": {
+      "switchToLight": "Vaihda vaaleaan",
+      "switchToDark": "Vaihda tummaan",
+      "loading": "Ladataan..."
+    },
+    "tabs": {
+      "about": "Tietoa minusta",
+      "game": "Oma pelini",
+      "projects": "Muut projektit"
+    },
+    "language": {
+      "label": "Kieli",
+      "english": "Englanti",
+      "swedish": "Ruotsi",
+      "finnish": "Suomi"
+    }
+  },
+  "about": {
+    "title": "Tietoa minusta",
+    "portraitAlt": "Kuva Kimmo Savilammesta",
+    "summary": {
+      "title": "Ammatillinen yhteenveto",
+      "text": "Olen intohimoinen full stack -kehittäjä ja pelintekijä, jolla on pitkä kokemus web-kehityksestä ja pelisuunnittelusta. Osaamiseni kattaa modernit web-teknologiat kuten Angular, React ja .NET sekä pelikehityksen Unitylla ja muilla pelimoottoreilla."
+    },
+    "focus": {
+      "text": "Keskityn rakentamaan selkeitä, responsiivisia käyttöliittymiä ja luotettavia full stack -ratkaisuja. Pidän monimutkaisten ideoiden muuttamisesta viimeistellyiksi kokemuksiksi, jotka tuntuvat nopeilta ja intuitiivisilta."
+    },
+    "skills": {
+      "title": "Tekniset taidot",
+      "web": {
+        "title": "Web-kehitys",
+        "item1": "Angular, React, TypeScript",
+        "item2": ".NET Core, C#, ASP.NET",
+        "item3": "HTML5, CSS3, Tailwind CSS",
+        "item4": "RESTful API:t, mikropalvelut"
+      },
+      "game": {
+        "title": "Pelikehitys",
+        "item1": "Game Maker",
+        "item2": "Pixi.js",
+        "item3": "Pelisuunnittelu & tasosuunnittelu",
+        "item4": "2D-grafiikka & animaatio",
+        "item5": "Musiikki & ääniefektit",
+        "item6": "Steam-integraatio & julkaisu"
+      }
+    },
+    "experience": {
+      "title": "Kokemus & osaaminen",
+      "text1": "Vahva tausta sekä yritysohjelmistokehityksessä että indie-pelien tekemisessä tuo jokaiseen projektiin ainutlaatuisen näkökulman. Kokemukseni kattaa skaalautuvien web-sovellusten kehittämisen, kiinnostavien käyttöliittymien suunnittelun ja pelien rakentamisen.",
+      "text2": "Olen erityisen ylpeä indie-pelistani \"Aria Disconnect\", Metroidvania-tyylisestä toimintaseikkailusta cyberpunk-teemalla, joka tuo esiin osaamiseni pelisuunnittelussa, ohjelmoinnissa ja projektinhallinnassa."
+    },
+    "connect": {
+      "title": "Ota yhteyttä"
+    },
+    "buttons": {
+      "outlined": "Testipainike (ääriviiva)",
+      "test": "Testipainike",
+      "save": "Tallenna",
+      "delete": "Poista",
+      "cancel": "Peruuta"
+    },
+    "actions": {
+      "linkedin": "LinkedIn-profiili",
+      "steam": "Pelini Steamissa"
+    }
+  },
+  "game": {
+    "about": {
+      "title": "Tietoa pelistä"
+    },
+    "description": "Aria Disconnect on Metroidvania-tyylinen toimintaseikkailu cyberpunk-teemalla. Seuraat Herin matkaa irtautumaan digitaalisesta painajaisesta, johon hän on jäänyt loukkuun. Vuosi on 2082, olet kytketty koneeseen ja ulospääsyyn on vain yksi keino: katkaista yhteys.",
+    "features": {
+      "title": "Keskeiset ominaisuudet",
+      "item1": "🦾 Metroidvania cyberpunk-estetiikalla",
+      "item2": "🧩 Tutkiminen ja pulmanratkaisu",
+      "item3": "🔧 Kyky- ja aseparannukset!",
+      "item4": "🏝️ Eristäytynyt, tunnelmallinen teema",
+      "item5": "🎵 Tunnelmallinen soundtrack",
+      "item6": "📖 Tarina elämästä ja kuolemasta, pitkälti ilman sanoja",
+      "item7": "🎮 Täysi ohjain­tuki (Xbox-ohjaimet)",
+      "item8": "🏆 Yksinpelikokemus Steam-saavutuksilla"
+    },
+    "trailers": {
+      "title": "Trailerit & pelikuva"
+    },
+    "video": {
+      "unsupported": "Selaimesi ei tue videon toistoa."
+    },
+    "trailerTitle": "Aria Disconnect -traileri {{index}}",
+    "screenshots": {
+      "title": "Kuvakaappaukset",
+      "alt1": "Aria Disconnect kuvakaappaus 1",
+      "alt2": "Aria Disconnect kuvakaappaus 2",
+      "alt3": "Aria Disconnect kuvakaappaus 3",
+      "alt4": "Aria Disconnect kuvakaappaus 4",
+      "alt5": "Aria Disconnect kuvakaappaus 5",
+      "alt6": "Aria Disconnect kuvakaappaus 6"
+    }
+  },
+  "projects": {
+    "title": "Muut projektit",
+    "subtitle": "Valikoima pienempiä kokeiluja ja web-pelejä.",
+    "desktopOnly": "Tämä projekti toimii vain tietokoneella.",
+    "viewOnGithub": "Näytä GitHubissa",
+    "spinMaster": {
+      "title": "Spin Master",
+      "description": "Nopea, arcade-tyylinen spinner-peli yksinkertaisilla ohjauksilla. Rakennettu Pixi.js:llä",
+      "iframeTitle": "Spin Master -live-demo"
+    }
+  },
+  "footer": {
+    "copyright": "© {{year}} Kimmo Savilampi. Kaikki oikeudet pidätetään."
+  }
+}
