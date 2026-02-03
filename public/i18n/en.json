@@ -104,6 +104,7 @@
   "projects": {
     "title": "Other Projects",
     "subtitle": "A selection of smaller experiments and web games.",
+    "desktopOnly": "This project is available on desktop only.",
     "viewOnGithub": "View on GitHub",
     "spinMaster": {
       "title": "Spin Master",

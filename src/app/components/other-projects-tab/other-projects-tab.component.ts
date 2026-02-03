@@ -2,6 +2,7 @@ import { Component, computed, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CardModule } from 'primeng/card';
 import { ButtonModule } from 'primeng/button';
+import { MessageModule } from 'primeng/message';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { TranslateModule } from '@ngx-translate/core';
 
@@ -12,11 +13,18 @@ type ProjectCard = {
   repoUrl: string;
   iframeTitle: string;
   safeUrl: SafeResourceUrl;
+  hideOnMobile?: boolean;
 };
 
 @Component({
   selector: 'app-other-projects-tab',
-  imports: [CommonModule, CardModule, ButtonModule, TranslateModule],
+  imports: [
+    CommonModule,
+    CardModule,
+    ButtonModule,
+    MessageModule,
+    TranslateModule,
+  ],
   templateUrl: './other-projects-tab.component.html',
   styleUrl: './other-projects-tab.component.scss',
 })
@@ -28,6 +36,7 @@ export class OtherProjectsTabComponent {
       liveUrl: 'https://bithsnake.github.io/spin-master-2/',
       repoUrl: 'https://github.com/bithsnake/spin-master-2',
       iframeTitleKey: 'projects.spinMaster.iframeTitle',
+      hideOnMobile: true,
     },
   ]);
 
@@ -39,6 +48,7 @@ export class OtherProjectsTabComponent {
       repoUrl: project.repoUrl,
       iframeTitle: project.iframeTitleKey,
       safeUrl: this.sanitizer.bypassSecurityTrustResourceUrl(project.liveUrl),
+      hideOnMobile: project.hideOnMobile,
     })),
   );
 

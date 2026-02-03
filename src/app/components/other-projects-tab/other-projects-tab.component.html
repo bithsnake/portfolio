@@ -36,15 +36,35 @@
               </div>
             </ng-template>
             <ng-template pTemplate="content">
-              <div class="iframe-shell">
-                <iframe
-                  class="project-iframe"
-                  [src]="project.safeUrl"
-                  [title]="project.iframeTitle | translate"
-                  loading="lazy"
-                  allowfullscreen
-                ></iframe>
-              </div>
+              @if (project.hideOnMobile) {
+                <div class="iframe-shell hide-on-mobile">
+                  <iframe
+                    class="project-iframe"
+                    [src]="project.safeUrl"
+                    [title]="project.iframeTitle | translate"
+                    loading="lazy"
+                    allowfullscreen
+                  ></iframe>
+                </div>
+                <div class="desktop-only-message show-on-mobile" role="note">
+                  <span class="desktop-only-icon" aria-hidden="true">
+                    <i class="fa-solid fa-info"></i>
+                  </span>
+                  <span class="desktop-only-text">
+                    {{ "projects.desktopOnly" | translate }}
+                  </span>
+                </div>
+              } @else {
+                <div class="iframe-shell">
+                  <iframe
+                    class="project-iframe"
+                    [src]="project.safeUrl"
+                    [title]="project.iframeTitle | translate"
+                    loading="lazy"
+                    allowfullscreen
+                  ></iframe>
+                </div>
+              }
             </ng-template>
           </p-card>
         }
