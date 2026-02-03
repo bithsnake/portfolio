@@ -45,20 +45,28 @@
                 [(ngModel)]="selectedLanguage"
                 (onChange)="onLanguageChange($event.value)"
                 [showClear]="false"
-                [styleClass]="'language-dropdown ' + selectedLanguage.code"
+                [styleClass]="'language-dropdown'"
                 [ariaLabel]="'app.language.label' | translate"
               >
                 <ng-template pTemplate="selectedItem" let-selected>
-                  <div
-                    class="language-option bg-slate-700 rounded-md px-1 py-2"
-                  >
-                    <span class="language-emoji">{{ selected?.emoji }} </span>
+                  <div class="language-option">
+                    <div
+                      [class]="
+                        'w-8 h-8 rounded-full border border-white/40 bg-center bg-cover mr-2 lang-flag-' +
+                        (selected?.code || selectedLanguage.code)
+                      "
+                    ></div>
                     <span>{{ selected?.labelKey | translate }}</span>
                   </div>
                 </ng-template>
                 <ng-template pTemplate="item" let-option>
                   <div class="language-option">
-                    <span class="language-emoji">{{ option.emoji }}</span>
+                    <div
+                      [class]="
+                        'w-6 h-6 rounded-full border border-white/40 bg-center bg-cover mr-2 lang-flag-' +
+                        option.code
+                      "
+                    ></div>
                     <span>{{ option.labelKey | translate }}</span>
                   </div>
                 </ng-template>
