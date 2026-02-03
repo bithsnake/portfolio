@@ -83,3 +83,21 @@ button:focus-visible,
   outline: 2px solid var(--app-accent);
   outline-offset: 2px;
 }
+
+/* PrimeNG image preview sizing (overlay appended to body) */
+.p-image-original {
+  width: 80vh !important;
+  height: 80vh !important;
+  max-width: 80vh !important;
+  max-height: 80vh !important;
+  object-fit: contain !important;
+}
+
+@media (max-width: 768px) {
+  .p-image-original {
+    width: 100vh !important;
+    height: 100vh !important;
+    max-width: 100vh !important;
+    max-height: 100vh !important;
+  }
+}
