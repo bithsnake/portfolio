@@ -1,10 +1,13 @@
 import { ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
+import { PLATFORM_ID } from '@angular/core';
 import { provideRouter } from '@angular/router';
 import { providePrimeNG } from 'primeng/config';
 import Aura from '@primeuix/themes/aura';
 import { provideHttpClient, withFetch } from '@angular/common/http';
-import { provideTranslateService } from '@ngx-translate/core';
-import { provideTranslateHttpLoader } from '@ngx-translate/http-loader';
+import { HttpClient } from '@angular/common/http';
+import { isPlatformBrowser } from '@angular/common';
+import { provideTranslateService, TranslateLoader } from '@ngx-translate/core';
+import { of } from 'rxjs';
 import { provideAnimations } from '@angular/platform-browser/animations';
 
 import { routes } from './app.routes';
@@ -20,10 +23,17 @@ export const appConfig: ApplicationConfig = {
     provideClientHydration(withEventReplay()),
     provideAnimations(),
     provideHttpClient(withFetch()),
-    provideTranslateService(),
-    provideTranslateHttpLoader({
-      prefix: 'i18n/',
-      suffix: '.json',
+    provideTranslateService({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: (http: HttpClient, platformId: object) => ({
+          getTranslation: (lang: string) =>
+            isPlatformBrowser(platformId)
+              ? http.get(`i18n/${lang}.json`)
+              : of({}),
+        }),
+        deps: [HttpClient, PLATFORM_ID],
+      },
     }),
     providePrimeNG({
       theme: {
