@@ -5,6 +5,7 @@ import { ButtonModule } from 'primeng/button';
 import { MessageModule } from 'primeng/message';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { TranslateModule } from '@ngx-translate/core';
+import { RevealDirective } from '../../shared/reveal.directive';
 
 type ProjectCard = {
   title: string;
@@ -24,6 +25,7 @@ type ProjectCard = {
     ButtonModule,
     MessageModule,
     TranslateModule,
+    RevealDirective,
   ],
   templateUrl: './other-projects-tab.component.html',
   styleUrl: './other-projects-tab.component.scss',

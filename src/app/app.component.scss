@@ -1,140 +1,150 @@
-// Responsive utilities
-:host ::ng-deep {
-  .custom-tabview {
-    .p-tabview-panels {
-      min-height: 400px;
-    }
-  }
+:host {
+  display: block;
+}
 
-  .custom-tabs {
-    .p-tabpanels {
-      min-height: 400px;
-    }
-  }
+main > * {
+  display: block;
+}
 
-  .custom-tabs {
-    border-radius: 0.875rem;
-    overflow: hidden;
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  border-bottom: 1px solid transparent;
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease;
+}
 
-    .p-tablist {
-      border-top-left-radius: var(--radius);
-      border-top-right-radius: var(--radius);
-    }
+/* The glass only appears once content scrolls under the bar, like Apple's
+   product pages; at the very top the hero reads edge to edge. */
+.nav-scrolled {
+  background: var(--nav-bg);
+  border-bottom-color: var(--border);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+}
 
-    .p-tabpanels {
-      border-bottom-left-radius: var(--radius);
-      border-bottom-right-radius: var(--radius);
-    }
-  }
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  height: 60px;
+}
 
-  .p-card {
-    background: var(--app-surface);
-    color: var(--app-text);
-    border: 1px solid var(--app-border);
-    border-radius: 1rem;
-  }
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
 
-  .p-card-header {
-    background: var(--app-surface);
-    color: var(--app-text);
-    border-bottom: 1px solid var(--app-border);
-    border-top-left-radius: 1rem;
-    border-top-right-radius: 1rem;
-  }
+.brand-mark {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 10px;
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: #fff;
+  background: var(--brand-gradient);
+}
 
-  .p-card-content,
-  .p-card-body {
-    border-bottom-left-radius: 1rem;
-    border-bottom-right-radius: 1rem;
-  }
+.brand-name {
+  display: none;
 
-  .p-button,
-  .p-tabview,
-  .p-carousel,
-  .p-image img,
-  video {
-    border-radius: 0.9rem;
-  }
-
-  // Ensure buttons and cards are responsive
-  .p-button {
-    transition: all 0.3s ease;
-
-    &:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 16px rgba(29, 78, 216, 0.25);
-    }
-  }
-
-  .theme-toggle {
-    .p-button {
-      padding: 0.5rem 0.75rem;
-      border-radius: 0.75rem;
-      background: var(--app-surface);
-      border: 1px solid var(--app-border);
-      color: var(--app-text);
-      box-shadow: none;
-    }
-
-    .p-button:hover {
-      box-shadow: 0 6px 16px rgba(29, 78, 216, 0.2);
-    }
-
-    i {
-      font-size: 1.1rem;
-    }
-  }
-
-  .language-select {
-    .language-dropdown {
-      width: 11rem;
-      border-radius: 0.75rem;
-      border: 1px solid var(--app-border);
-      background: var(--app-surface);
-      color: var(--app-text);
-    }
-
-    .p-dropdown-label {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-  }
-
-  .language-option {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-  }
-
-  .language-emoji {
-    font-size: 1.1rem;
-  }
-
-  .lang-flag-en {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 30'%3E%3CclipPath id='s'%3E%3Cpath d='M0,0 v30 h60 v-30 z'/%3E%3C/clipPath%3E%3CclipPath id='t'%3E%3Cpath d='M30,15 h30 v15 z v15 h-30 z h-30 v-15 z v-15 h30 z'/%3E%3C/clipPath%3E%3Cg clip-path='url(%23s)'%3E%3Cpath d='M0,0 v30 h60 v-30 z' fill='%23012169'/%3E%3Cpath d='M0,0 L60,30 M60,0 L0,30' stroke='%23fff' stroke-width='6'/%3E%3Cpath d='M0,0 L60,30 M60,0 L0,30' clip-path='url(%23t)' stroke='%23C8102E' stroke-width='4'/%3E%3Cpath d='M30,0 v30 M0,15 h60' stroke='%23fff' stroke-width='10'/%3E%3Cpath d='M30,0 v30 M0,15 h60' stroke='%23C8102E' stroke-width='6'/%3E%3C/g%3E%3C/svg%3E") !important;
-  }
-
-  .lang-flag-sv {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 5' %3E%3Cpath fill='%23005293' d='M0,0H8V5H0Z'/%3E%3Cpath stroke='%23fecb00' d='M0,2.5h8M3,0v5'/%3E%3C/svg%3E") !important;
-  }
-
-  .lang-flag-fi {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 11'%3E%3Crect width='18' height='11' fill='%23fff'/%3E%3Cpath d='M0,5.5h18M6.5,0v11' stroke='%23002F6C' stroke-width='3'/%3E%3C/svg%3E") !important;
+  @media (min-width: 1024px) {
+    display: inline;
   }
 }
 
-// Mobile responsive adjustments
-@media (max-width: 768px) {
-  :host ::ng-deep {
-    .custom-tabs .p-tabpanels {
-      padding: 1rem;
+.nav-links {
+  display: none;
+  gap: 0.25rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  @media (min-width: 768px) {
+    display: flex;
+  }
+
+  a {
+    display: block;
+    padding: 0.45rem 0.9rem;
+    border-radius: 999px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-muted);
+    text-decoration: none;
+    transition:
+      color 0.2s ease,
+      background-color 0.2s ease;
+
+    &:hover {
+      color: var(--text);
     }
 
-    .language-select {
-      .language-dropdown {
-        width: 100%;
-      }
+    &.active {
+      color: var(--text);
+      background: var(--surface-2);
     }
+  }
+}
+
+.nav-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.segmented {
+  display: flex;
+  padding: 3px;
+  border-radius: 999px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+
+  button {
+    padding: 0.3rem 0.65rem;
+    border: 0;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    color: var(--text-muted);
+    background: transparent;
+    cursor: pointer;
+    transition:
+      color 0.2s ease,
+      background-color 0.2s ease;
+
+    &.on {
+      color: var(--text);
+      background: var(--bg-elevated);
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    }
+  }
+}
+
+.icon-btn {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: rotate(20deg);
   }
 }

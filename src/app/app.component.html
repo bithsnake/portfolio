@@ -1,204 +1,56 @@
-<div class="app-shell min-h-screen flex flex-col">
-  <!-- Header -->
-  <header class="app-header py-8 px-4 shadow-lg">
-    <div class="container mx-auto max-w-6xl">
-      <div
-        class="flex flex-col md:flex-row md:items-center md:justify-between gap-6"
-      >
-        <div>
-          <h1 class="text-4xl md:text-5xl font-bold mb-2">
-            {{ "app.title" | translate }}
-          </h1>
-          <p class="text-lg md:text-xl text-muted">
-            {{ "app.subtitle" | translate }}
-          </p>
-        </div>
-        @defer (on idle) {
-          <div
-            class="header-controls flex flex-col md:flex-row items-stretch md:items-end justify-between md:justify-end gap-4"
-          >
-            <div
-              class="theme-toggle flex flex-col items-center md:items-end w-full md:w-auto h-full"
-            >
-              <button
-                pButton
-                type="button"
-                class="p-button-raised p-button-secondary w-full md:w-auto"
-                (click)="toggleTheme()"
-                [attr.aria-pressed]="isDarkMode()"
-                [attr.aria-label]="themeToggleKey() | translate"
-              >
-                <i
-                  class="fa-solid"
-                  [class.fa-moon]="!isDarkMode()"
-                  [class.fa-sun]="isDarkMode()"
-                ></i>
-              </button>
-              <span
-                class="mt-auto text-sm"
-                style="color: var(--app-text-muted)"
-              >
-                {{ themeToggleKey() | translate }}
-              </span>
-            </div>
+<nav class="nav" [class.nav-scrolled]="scrolled()" aria-label="Main">
+  <div class="wrap nav-inner">
+    <a href="#about" class="brand" aria-label="Kimmo Savilampi">
+      <span class="brand-mark">KS</span>
+      <span class="brand-name">Kimmo Savilampi</span>
+    </a>
 
-            <div
-              class="language-select flex flex-col items-center md:items-end w-full md:w-auto h-full"
-            >
-              <p-dropdown
-                [options]="languageOptions"
-                [(ngModel)]="selectedLanguage"
-                (onChange)="onLanguageChange($event.value)"
-                [showClear]="false"
-                [styleClass]="'language-dropdown w-full md:w-auto'"
-                [ariaLabel]="'app.language.label' | translate"
-              >
-                <ng-template pTemplate="selectedItem" let-selected>
-                  <div class="language-option">
-                    <div
-                      [class]="
-                        'w-8 h-8 rounded-full border border-white/40 bg-center bg-cover mr-2 lang-flag-' +
-                        (selected?.code || selectedLanguage.code)
-                      "
-                    ></div>
-                    <span>{{ selected?.labelKey | translate }}</span>
-                  </div>
-                </ng-template>
-                <ng-template pTemplate="item" let-option>
-                  <div class="language-option">
-                    <div
-                      [class]="
-                        'w-6 h-6 rounded-full border border-white/40 bg-center bg-cover mr-2 lang-flag-' +
-                        option.code
-                      "
-                    ></div>
-                    <span>{{ option.labelKey | translate }}</span>
-                  </div>
-                </ng-template>
-              </p-dropdown>
-              <span
-                class="mt-auto text-sm"
-                style="color: var(--app-text-muted)"
-              >
-                {{ "app.language.label" | translate }}
-              </span>
-            </div>
-          </div>
-        } @placeholder {
-          <div
-            class="header-controls flex flex-col md:flex-row items-stretch md:items-end justify-between md:justify-end gap-4"
-            aria-hidden="true"
+    <ul class="nav-links">
+      @for (section of sections; track section) {
+        <li>
+          <a
+            [href]="'#' + section"
+            [class.active]="activeSection() === section"
+            [attr.aria-current]="activeSection() === section ? 'true' : null"
+            >{{ "app.nav." + section | translate }}</a
           >
-            <div
-              class="theme-toggle flex flex-col items-center md:items-end w-full md:w-auto h-full"
-            >
-              <div
-                class="p-button p-button-secondary p-button-raised flex items-center justify-center w-full md:w-auto"
-                style="width: 44px; height: 38px; border-radius: 0.75rem"
-              >
-                <i class="fa-solid fa-spinner fa-spin"></i>
-              </div>
-              <span
-                class="mt-auto text-sm"
-                style="color: var(--app-text-muted)"
-              >
-                {{ "app.theme.loading" | translate }}
-              </span>
-            </div>
-            <div
-              class="language-select flex flex-col items-center md:items-end w-full md:w-auto h-full"
-            >
-              <div
-                class="p-button p-button-secondary p-button-raised flex items-center justify-center w-full md:w-auto"
-                style="width: 150px; height: 38px; border-radius: 0.75rem"
-              >
-                <i class="fa-solid fa-spinner fa-spin"></i>
-              </div>
-              <span
-                class="mt-auto text-sm"
-                style="color: var(--app-text-muted)"
-              >
-                {{ "app.theme.loading" | translate }}
-              </span>
-            </div>
-          </div>
+        </li>
+      }
+    </ul>
+
+    <div class="nav-controls">
+      <div class="segmented" role="group" [attr.aria-label]="'app.language.label' | translate">
+        @for (code of languages; track code) {
+          <button
+            type="button"
+            [class.on]="language() === code"
+            [attr.aria-pressed]="language() === code"
+            [attr.aria-label]="languageNameKeys[code] | translate"
+            [attr.lang]="code"
+            (click)="setLanguage(code)"
+          >
+            {{ languageLabels[code] }}
+          </button>
         }
       </div>
+      <button
+        type="button"
+        class="icon-btn"
+        (click)="toggleTheme()"
+        [attr.aria-label]="themeToggleKey() | translate"
+        [attr.title]="themeToggleKey() | translate"
+      >
+        <i class="fa-solid" [class.fa-sun]="isDarkMode()" [class.fa-moon]="!isDarkMode()"></i>
+      </button>
     </div>
-  </header>
+  </div>
+</nav>
 
-  <!-- Main Content -->
-  <main class="flex-grow container mx-auto max-w-6xl px-4 py-8">
-    <p-tabs
-      class="custom-tabs"
-      [value]="activeTab()"
-      (valueChange)="activeTab.set($event)"
-      [attr.data-active]="activeTab()"
-    >
-      <p-tablist>
-        <p-tab value="0">{{ "app.tabs.about" | translate }}</p-tab>
-        <p-tab value="1">{{ "app.tabs.game" | translate }}</p-tab>
-        <p-tab value="2">{{ "app.tabs.projects" | translate }}</p-tab>
-      </p-tablist>
-      <p-tabpanels>
-        <p-tabpanel value="0">
-          <app-about-tab></app-about-tab>
-        </p-tabpanel>
-        <p-tabpanel value="1">
-          <app-game-tab></app-game-tab>
-        </p-tabpanel>
-        <p-tabpanel value="2">
-          <app-other-projects-tab></app-other-projects-tab>
-        </p-tabpanel>
-      </p-tabpanels>
-    </p-tabs>
-  </main>
+<main>
+  <app-about-tab id="about"></app-about-tab>
+  <app-experience-tab id="experience"></app-experience-tab>
+  <app-game-tab id="game"></app-game-tab>
+  <app-other-projects-tab id="projects"></app-other-projects-tab>
+</main>
 
-  <!-- Footer -->
-  <app-footer></app-footer>
-</div>
-<style>
-  /* Custom Tabs styling */
-  ::ng-deep .custom-tabs .p-tablist {
-    background: linear-gradient(
-      135deg,
-      var(--app-accent) 0%,
-      var(--app-accent-2) 100%
-    );
-  }
-
-  ::ng-deep .custom-tabs .p-tab {
-    color: rgba(255, 255, 255, 0.8);
-    font-weight: 500;
-  }
-
-  ::ng-deep .custom-tabs .p-tab.p-highlight {
-    color: #ffffff;
-    font-weight: 700;
-    background: rgba(255, 255, 255, 0.28);
-    box-shadow: inset 0 -2px 0 rgba(255, 255, 255, 0.6);
-  }
-
-  html:not(.theme-dark) ::ng-deep .custom-tabs .p-tab {
-    color: rgba(31, 41, 55, 0.7);
-  }
-
-  html:not(.theme-dark) ::ng-deep .custom-tabs .p-tab.p-highlight {
-    color: #111827;
-    font-weight: 700;
-    background: rgba(17, 24, 39, 0.12);
-    box-shadow: inset 0 -2px 0 rgba(17, 24, 39, 0.45);
-  }
-
-  ::ng-deep .custom-tabs[data-active="0"] .p-tab[value="0"],
-  ::ng-deep .custom-tabs[data-active="1"] .p-tab[value="1"],
-  ::ng-deep .custom-tabs[data-active="2"] .p-tab[value="2"] {
-    font-weight: 700;
-  }
-
-  ::ng-deep .custom-tabs .p-tabpanels {
-    background: var(--app-surface);
-    color: var(--app-text);
-    padding: 2rem;
-  }
-</style>
+<app-footer></app-footer>

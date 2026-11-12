@@ -9,4 +9,6 @@ import { TranslateModule } from '@ngx-translate/core';
 })
 export class FooterComponent {
   currentYear = signal(new Date().getFullYear());
+  readonly linkedInUrl = 'https://www.linkedin.com/in/kimmo-savilampi-95562b40/';
+  readonly githubUrl = 'https://github.com/bithsnake';
 }

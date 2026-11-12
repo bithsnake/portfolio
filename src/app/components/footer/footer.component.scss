@@ -1,0 +1,42 @@
+:host {
+  display: block;
+}
+
+.footer {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(96px, 14vw, 180px) 0 48px;
+  border-top: 1px solid var(--border);
+  text-align: center;
+}
+
+.footer-glow {
+  position: absolute;
+  left: 50%;
+  bottom: -60%;
+  width: 900px;
+  height: 600px;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background: radial-gradient(closest-side, color-mix(in srgb, var(--accent) 35%, transparent), transparent);
+  filter: blur(30px);
+  pointer-events: none;
+}
+
+.footer-inner {
+  position: relative;
+}
+
+.footer-ctas {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 2.5rem;
+}
+
+.footer-copy {
+  margin: clamp(64px, 10vw, 120px) 0 0;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}

@@ -2,70 +2,196 @@
   "app": {
     "title": "Kimmo Savilampi - Portfolio",
     "subtitle": "Fullstackutvecklare & spelskapare",
-    "theme": {
-      "switchToLight": "Växla till ljust",
-      "switchToDark": "Växla till mörkt",
-      "loading": "Laddar..."
-    },
-    "tabs": {
+    "nav": {
       "about": "Om mig",
-      "game": "Mitt spel",
-      "projects": "Andra projekt"
+      "experience": "Erfarenhet",
+      "game": "Spel",
+      "projects": "Projekt"
+    },
+    "theme": {
+      "switchToLight": "Byt till ljust läge",
+      "switchToDark": "Byt till mörkt läge",
+      "loading": "Laddar..."
     },
     "language": {
       "label": "Språk",
       "english": "Engelska",
       "swedish": "Svenska",
-      "finnish": "Finska"
+      "finnish": "Finska",
+      "ukrainian": "Ukrainska"
     }
   },
   "about": {
-    "title": "Om mig",
     "portraitAlt": "Porträtt av Kimmo Savilampi",
-    "summary": {
-      "title": "Professionell sammanfattning",
-      "text": "Jag är en passionerad fullstackutvecklare och spelskapare med lång erfarenhet av webbutveckling och speldesign. Min kompetens sträcker sig över moderna webbtekniker som Angular, React och .NET, samt spelutveckling i Unity och andra spelmotorer."
+    "hero": {
+      "eyebrow": "Fullstackutvecklare · Spelskapare",
+      "line1": "Kimmo Savilampi.",
+      "line2": "Från databas till pixel.",
+      "lede": "Jag bygger digital vård på doktor.se — patientappar i realtid, Node.js-tjänster, PostgreSQL och Kubernetes på AWS. Jag äger funktioner från första skissen till servern de körs på, och jag har släppt mitt eget spel på Steam.",
+      "ctaWork": "Se mitt arbete",
+      "badge": "Bygger på doktor.se"
     },
-    "focus": {
-      "text": "Jag fokuserar på att skapa rena, responsiva gränssnitt och bygga pålitliga fullstacklösningar. Jag tycker om att förvandla komplexa idéer till polerade upplevelser som känns snabba och intuitiva."
+    "statement": "Jag stannar inte vid mitt lager. Jag följer ett problem genom gränssnittet, API:et, databasen och molnet — tills det är löst på riktigt.",
+    "glance": {
+      "eyebrow": "I korthet",
+      "title": "En utvecklare. Hela stacken."
     },
-    "skills": {
-      "title": "Tekniska färdigheter",
-      "web": {
-        "title": "Webbutveckling",
-        "item1": "Angular, React, TypeScript",
-        "item2": ".NET Core, C#, ASP.NET",
-        "item3": "HTML5, CSS3, Tailwind CSS",
-        "item4": "RESTful API:er, mikrotjänster"
+    "layers": {
+      "ui": "Gränssnitt — React, Next.js, Angular",
+      "api": "API:er — Node.js, Fastify, Express",
+      "realtime": "Realtid — WebSockets, SSE",
+      "data": "Data — PostgreSQL, Redux",
+      "cloud": "Moln — Kubernetes, AWS, GitOps"
+    },
+    "tiles": {
+      "stack": {
+        "title": "Fullstack på riktigt",
+        "text": "Varje lager i en funktion, byggt och ägt av samma person — så att inget tappas mellan team."
+      },
+      "realtime": {
+        "title": "Realtid från grunden",
+        "text": "Liveuppdateringar med WebSockets och Server-Sent Events, byggda för att klara tappade anslutningar."
       },
       "game": {
-        "title": "Spelutveckling",
-        "item1": "Game Maker",
-        "item2": "Pixi.js",
-        "item3": "Speldesign & nivådesign",
-        "item4": "2D-grafik & animation",
-        "item5": "Musik & ljudeffekter",
-        "item6": "Steam-integration & publicering"
+        "title": "Släppt ett spel på Steam",
+        "text": "Aria Disconnect — design, kod, grafik och musik, från idé till butikssida.",
+        "cta": "Se på Steam"
+      },
+      "commits": "commits under mina första fem månader på doktor.se",
+      "codebases": "kodbaser inom webb, backend och infrastruktur",
+      "langs": {
+        "title": "Jag arbetar på"
       }
     },
-    "experience": {
-      "title": "Erfarenhet & expertis",
-      "text1": "Med en stark bakgrund inom både företagsutveckling och oberoende spelskapande bidrar jag med ett unikt perspektiv i varje projekt. Min erfarenhet inkluderar att utveckla skalbara webbapplikationer, skapa engagerande användargränssnitt och bygga spel.",
-      "text2": "Jag är särskilt stolt över mitt indiespel \"Aria Disconnect\", ett Metroidvania-liknande actionäventyr med cyberpunktema som visar mina färdigheter inom speldesign, programmering och projektledning."
+    "techLabel": "Tekniker jag arbetar med"
+  },
+  "experience": {
+    "eyebrow": "Erfarenhet",
+    "title1": "Bygger digital vård",
+    "title2": "på doktor.se.",
+    "stackLabel": "Tekniker",
+    "role": {
+      "title": "Fullstackutvecklare",
+      "period": "2026 – nu",
+      "current": "Nu",
+      "text": "doktor.se är en svensk digital vårdgivare. Jag arbetar med patientapparna, mikrotjänsterna bakom dem, molnplattformen och analysen — och tar funktioner från idé till produktion."
     },
-    "connect": {
-      "title": "Kontakta mig"
+    "stats": {
+      "codebases": {
+        "value": "15+",
+        "label": "kodbaser jag bidragit till"
+      },
+      "commits": {
+        "value": "400+",
+        "label": "levererade commits"
+      },
+      "services": {
+        "value": "6",
+        "label": "backendtjänster jag arbetat i"
+      },
+      "layers": {
+        "value": "UI → moln",
+        "label": "ansvar hela vägen"
+      }
     },
-    "buttons": {
-      "outlined": "Testknapp (kontur)",
-      "test": "Testknapp",
-      "save": "Spara",
-      "delete": "Ta bort",
-      "cancel": "Avbryt"
+    "areas": {
+      "backend": "Backend",
+      "cloud": "Moln",
+      "frontend": "Frontend",
+      "data": "Data",
+      "fullstack": "Fullstack"
     },
-    "actions": {
-      "linkedin": "LinkedIn-profil",
-      "steam": "Mitt spel på Steam"
+    "cases": {
+      "eyebrow": "Utvalt arbete",
+      "title": "Det jag har byggt.",
+      "realtime": {
+        "title": "Realtidssystem",
+        "summary": "Funktioner som uppdateras i samma stund som något händer — i patientappen, i interna verktyg och i servrar jag byggt själv.",
+        "p1": "Patientappen lyssnar på WebSocket-händelser: nya, avbokade och flyttade bokningar uppdaterar gränssnittet och inkorgen direkt.",
+        "p2": "Byggde en WebSocket-server i Node.js (ws + Express) med broadcast-chatt, närvaro i realtid och utloggningsnotiser.",
+        "p3": "Valde Server-Sent Events med heartbeats och automatisk återanslutning för en tjänst som sover när den är inaktiv — och dokumenterade varför det slår WebSockets där."
+      },
+      "auth": {
+        "title": "Autentiseringstjänst från grunden",
+        "summary": "En fristående Node.js-tjänst som äger konton, inloggning och samarbete i realtid för en intern adminplattform.",
+        "p1": "Fastify med svarsscheman, så att lösenordshashar aldrig kan läcka ut ur en endpoint av misstag.",
+        "p2": "Signerade tokens med utgångstid, scrypt-hashning av lösenord och verifierade webhook-signaturer.",
+        "p3": "Flyttade konton från en fil på disk till PostgreSQL — och löste användare som försvann när appen kördes i flera containrar."
+      },
+      "cloud": {
+        "title": "Moln och infrastruktur",
+        "summary": "Flyttade den publika webbplatsen doktor.se till Kubernetes och byggde AWS-infrastrukturen runt den som kod.",
+        "p1": "Migrering till AWS EKS med GitOps-driftsättning via Flux — Git bestämmer vad som körs i produktion.",
+        "p2": "AWS CDK-stackar med Lambda-funktioner och en verifierad maildomän i SES.",
+        "p3": "Konfiguration vid körning och rättningar från säkerhetsskanningar, så att en containeravbild körs säkert i alla miljöer."
+      },
+      "services": {
+        "title": "Mikrotjänster och API:er",
+        "summary": "Arbete i flera Node.js-tjänster i en mikrotjänstarkitektur — från SQL till API-gateway.",
+        "p1": "Endpoint för mottagningars lediga tider, med SQL-frågor och tester i bokningstjänsten.",
+        "p2": "Sms och transaktionell e-post: API-rutter, mallar och ett verktyg där partnerapotek kan skicka meddelanden till patienter.",
+        "p3": "Feature flags på serversidan, och produktdata som går från tjänst till adminpanel till patientapp."
+      },
+      "admin": {
+        "title": "Adminplattform för vaccination",
+        "summary": "Ett internt verktyg där personal driver en rikstäckande vaccinationstjänst — byggt ovanpå ett headless CMS.",
+        "p1": "Redaktörer hanterar mottagningar, priser och kampanjer, med massredigering och bilduppladdning.",
+        "p2": "Konfliktdetektering när två personer redigerar samma mottagning, och schemavalidering före varje skrivning.",
+        "p3": "Automatisering: kampanjer löper ut av sig själva, öppettider synkas och mottagningar importeras från kalkylark."
+      },
+      "inbox": {
+        "title": "Inkorg i appen, hela vägen",
+        "summary": "En ny inkorg i patientappen, från API-klient till skärmar till liveuppdateringar.",
+        "p1": "Inkorgsskärmar med oläst-märke, flerval och radering.",
+        "p2": "Antalet olästa uppdateras live när bokningshändelser kommer via WebSockets.",
+        "p3": "Rättade CORS-preflight i API-gatewayen så att webbappen kunde nå den nya tjänsten."
+      },
+      "analytics": {
+        "title": "Analys med integritet i fokus",
+        "summary": "Produktanalys och sessionsinspelning i patientens vårdflöde — utan att exponera känsliga hälsodata.",
+        "p1": "Händelsespårning genom ett vårdflöde i flera steg.",
+        "p2": "Sessionsinspelning som maskerar text och blockerar bilder, video och uppladdningar.",
+        "p3": "Fjärrstyrd utrullning med feature flags, förberedd för integritets- och juridisk granskning."
+      },
+      "media": {
+        "title": "Rik media i konversationer",
+        "summary": "Patienter kan skicka video och se media i helskärm i sina konversationer med vårdpersonal.",
+        "p1": "Videostöd i uppladdningswidgeten.",
+        "p2": "Förhandsvisning av bild och video i helskärm med svep och pilnavigering.",
+        "p3": "Kontroller som fungerar med tangentbord och skärmläsare."
+      }
+    },
+    "skills": {
+      "eyebrow": "Kompetenser",
+      "title": "Det jag behärskar.",
+      "expert": "Expert",
+      "advanced": "Avancerad",
+      "groups": {
+        "backend": "Backend och realtid",
+        "frontend": "Frontend",
+        "cloud": "Moln och DevOps",
+        "quality": "Data, kvalitet och leverans"
+      }
+    },
+    "principles": {
+      "eyebrow": "Principer",
+      "title": "Så arbetar jag.",
+      "ownership": {
+        "title": "Äger hela vägen",
+        "text": "Från databasschemat till pixeln användaren ser — och driftsättningen däremellan."
+      },
+      "secure": {
+        "title": "Säkert som standard",
+        "text": "Designar så att misstag blir omöjliga, inte bara osannolika."
+      },
+      "measure": {
+        "title": "Mät, bestäm sedan",
+        "text": "Levererar med spårning och feature flags, och låter data styra nästa steg."
+      },
+      "clarity": {
+        "title": "Lämnar det tydligare",
+        "text": "Kommentarer som förklarar varför, och guider som hjälper nästa utvecklare framåt."
+      }
     }
   },
   "game": {
@@ -82,10 +208,12 @@
       "item5": "🎵 Atmosfäriskt soundtrack",
       "item6": "📖 Berättelse om liv och död, mestadels utan ord",
       "item7": "🎮 Fullt handkontrollstöd (Xbox-kontroller)",
-      "item8": "🏆 Ensamspel med Steam-prestationer"
+      "item8": "🏆 Ensamspel med Steam-prestationer",
+      "eyebrow": "Funktioner"
     },
     "trailers": {
-      "title": "Speltrailers & gameplay"
+      "title": "Speltrailers & gameplay",
+      "eyebrow": "Trailers"
     },
     "video": {
       "unsupported": "Din webbläsare stöder inte videouppspelning."
@@ -98,21 +226,29 @@
       "alt3": "Aria Disconnect skärmdump 3",
       "alt4": "Aria Disconnect skärmdump 4",
       "alt5": "Aria Disconnect skärmdump 5",
-      "alt6": "Aria Disconnect skärmdump 6"
-    }
+      "alt6": "Aria Disconnect skärmdump 6",
+      "eyebrow": "Galleri"
+    },
+    "eyebrow": "Mitt spel",
+    "cta": "Hämta på Steam"
   },
   "projects": {
-    "title": "Andra projekt",
-    "subtitle": "Ett urval av mindre experiment och webbspel.",
+    "title": "Mer jag har gjort.",
+    "subtitle": "Mindre experiment och webbspel — spelbara direkt här.",
     "desktopOnly": "Det här projektet fungerar bara på dator.",
     "viewOnGithub": "Visa på GitHub",
     "spinMaster": {
       "title": "Spin Master",
       "description": "Ett snabbt arkadliknande spinner-spel med enkla kontroller. Byggt i Pixi.js",
       "iframeTitle": "Spin Master live-demo"
-    }
+    },
+    "eyebrow": "Sidoprojekt",
+    "play": "Spela"
   },
   "footer": {
-    "copyright": "© {{year}} Kimmo Savilampi. Alla rättigheter förbehållna."
+    "copyright": "© {{year}} Kimmo Savilampi. Alla rättigheter förbehållna.",
+    "title1": "Låt oss bygga",
+    "title2": "något riktigt bra.",
+    "cta": "Kontakta mig på LinkedIn"
   }
 }

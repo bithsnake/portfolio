@@ -5,6 +5,7 @@ import { ImageModule } from 'primeng/image';
 import { CommonModule } from '@angular/common';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { TranslateModule } from '@ngx-translate/core';
+import { RevealDirective } from '../../shared/reveal.directive';
 
 @Component({
   selector: 'app-game-tab',
@@ -14,11 +15,14 @@ import { TranslateModule } from '@ngx-translate/core';
     CarouselModule,
     ImageModule,
     TranslateModule,
+    RevealDirective,
   ],
   templateUrl: './game-tab.component.html',
   styleUrl: './game-tab.component.scss',
 })
 export class GameTabComponent {
+  readonly steamUrl = 'https://store.steampowered.com/app/1269910/Aria_Disconnect/';
+
   gameDescriptionKey = signal('game.description');
 
   gameFeatureKeys = signal([

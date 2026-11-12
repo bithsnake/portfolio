@@ -1,56 +1,44 @@
-<div class="game-container">
-  <!-- Game Description -->
-  <p-card class="mb-6">
-    <ng-template pTemplate="header">
-      <div
-        class="section-header text-center py-6 bg-center h-24"
-        style="
-          height: 200px;
-          background-color: #000;
-          background-image: url(&quot;aria_disconnect_header.jpg&quot;);
-          background-size: contain;
-          background-repeat: no-repeat;
-        "
-      ></div>
-    </ng-template>
-    <ng-template pTemplate="content">
-      <div class="space-y-4">
-        <section>
-          <h3 class="text-2xl font-semibold heading-accent mb-3">
-            {{ "game.about.title" | translate }}
-          </h3>
-          <p class="text-body leading-relaxed mb-4">
-            {{ gameDescriptionKey() | translate }}
-          </p>
-
-          <h4 class="text-xl font-semibold heading-accent-soft mb-2">
-            {{ "game.features.title" | translate }}
-          </h4>
-          <ul class="grid grid-cols-1 md:grid-cols-2 gap-2">
-            @for (featureKey of gameFeatureKeys(); track featureKey) {
-              <li class="flex items-start">
-                <i class="pi pi-check-circle heading-accent mr-2 mt-1"></i>
-                <span class="text-body">{{ featureKey | translate }}</span>
-              </li>
-            }
-          </ul>
-        </section>
+<section class="game">
+  <!-- Full-bleed banner -->
+  <div class="banner">
+    <div class="banner-img" style="--img: url(https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1269910/ss_84f281dba17b2667fb7c433ea52c30d895952543.1920x1080.jpg)" aria-hidden="true"></div>
+    <div class="wrap banner-copy">
+      <span class="eyebrow eyebrow-light" reveal>{{ "game.eyebrow" | translate }}</span>
+      <h2 class="banner-title" reveal [revealDelay]="60">
+        <img class="banner-logo" src="aria_disconnect_header.jpg" alt="Aria Disconnect" />
+      </h2>
+      <p class="banner-lede" reveal [revealDelay]="120">
+        {{ gameDescriptionKey() | translate }}
+      </p>
+      <div class="banner-ctas" reveal [revealDelay]="180">
+        <a [href]="steamUrl" target="_blank" rel="noopener noreferrer" class="pill pill-primary">
+          <i class="fa-brands fa-steam" aria-hidden="true"></i>
+          {{ "game.cta" | translate }}
+        </a>
       </div>
-    </ng-template>
-  </p-card>
+    </div>
+  </div>
 
-  <br />
+  <div class="wrap">
+    <!-- Features -->
+    <div class="block-head">
+      <span class="eyebrow" reveal>{{ "game.features.eyebrow" | translate }}</span>
+      <h3 class="headline" reveal>{{ "game.features.title" | translate }}</h3>
+    </div>
+    <ul class="features">
+      @for (featureKey of gameFeatureKeys(); track featureKey; let i = $index) {
+        <li class="card feature" reveal [revealDelay]="(i % 4) * 70">
+          {{ featureKey | translate }}
+        </li>
+      }
+    </ul>
 
-  <!-- Video Carousel -->
-  <p-card class="mb-6">
-    <ng-template pTemplate="header">
-      <div class="section-header py-3 px-4">
-        <h3 class="text-2xl font-semibold heading-accent">
-          {{ "game.trailers.title" | translate }}
-        </h3>
-      </div>
-    </ng-template>
-    <ng-template pTemplate="content">
+    <!-- Trailers -->
+    <div class="block-head">
+      <span class="eyebrow" reveal>{{ "game.trailers.eyebrow" | translate }}</span>
+      <h3 class="headline" reveal>{{ "game.trailers.title" | translate }}</h3>
+    </div>
+    <div class="card trailers" reveal>
       <p-carousel
         [value]="videos()"
         [numVisible]="1"
@@ -60,54 +48,37 @@
         [responsiveOptions]="responsiveOptions()"
       >
         <ng-template let-video pTemplate="item">
-          <div class="video-item p-4">
-            <div class="video-wrapper">
-              <video
-                [src]="video.url"
-                controls
-                class="w-full rounded-lg shadow-lg"
-                [title]="video.titleKey | translate: video.titleParams"
-              >
-                {{ "game.video.unsupported" | translate }}
-              </video>
-            </div>
-            <div class="mt-3 text-center">
-              <p class="text-lg font-medium text-body">
-                {{ video.titleKey | translate: video.titleParams }}
-              </p>
-            </div>
-          </div>
+          <figure class="video-item">
+            <video
+              [src]="video.url"
+              controls
+              preload="metadata"
+              [title]="video.titleKey | translate: video.titleParams"
+            >
+              {{ "game.video.unsupported" | translate }}
+            </video>
+            <figcaption>{{ video.titleKey | translate: video.titleParams }}</figcaption>
+          </figure>
         </ng-template>
       </p-carousel>
-    </ng-template>
-  </p-card>
+    </div>
 
-  <br />
-
-  <!-- Screenshot Gallery -->
-  <p-card>
-    <ng-template pTemplate="header">
-      <div class="section-header py-3 px-4">
-        <h3 class="text-2xl font-semibold heading-accent">
-          {{ "game.screenshots.title" | translate }}
-        </h3>
-      </div>
-    </ng-template>
-    <ng-template pTemplate="content">
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        @for (screenshot of screenshots(); track screenshot.url) {
-          <div class="screenshot-item">
-            <p-image
-              [src]="screenshot.url"
-              [alt]="screenshot.altKey | translate"
-              width="100%"
-              [preview]="true"
-              styleClass="rounded-lg shadow-md hover:shadow-xl transition-shadow cursor-pointer"
-            >
-            </p-image>
-          </div>
-        }
-      </div>
-    </ng-template>
-  </p-card>
-</div>
+    <!-- Screenshots -->
+    <div class="block-head">
+      <span class="eyebrow" reveal>{{ "game.screenshots.eyebrow" | translate }}</span>
+      <h3 class="headline" reveal>{{ "game.screenshots.title" | translate }}</h3>
+    </div>
+    <div class="shots">
+      @for (screenshot of screenshots(); track screenshot.url; let i = $index) {
+        <div class="shot" [class.shot-wide]="i === 0" reveal [revealDelay]="(i % 3) * 80">
+          <p-image
+            [src]="screenshot.url"
+            [alt]="screenshot.altKey | translate"
+            width="100%"
+            [preview]="true"
+          ></p-image>
+        </div>
+      }
+    </div>
+  </div>
+</section>

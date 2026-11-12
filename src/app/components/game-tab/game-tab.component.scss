@@ -1,59 +1,182 @@
-.game-container {
-  .mb-6 {
-    margin-bottom: 1.5rem;
+:host {
+  display: block;
+  padding-bottom: clamp(80px, 12vw, 160px);
+}
+
+/* ---------- Banner ---------- */
+.banner {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  min-height: clamp(520px, 80vh, 760px);
+  overflow: hidden;
+  background: #000;
+}
+
+.banner-img {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0.6) 55%, #000 100%),
+    var(--img) center / cover no-repeat;
+  image-rendering: pixelated;
+  /* The screenshot has the game's own black side bars baked in; scaling up
+     crops them off so the art reaches the edges. */
+  transform: scale(1.35);
+  animation: ken-burns 24s ease-in-out infinite alternate;
+}
+
+.banner-copy {
+  position: relative;
+  padding-bottom: clamp(48px, 8vw, 96px);
+}
+
+.eyebrow-light {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.banner-title {
+  margin: 0;
+}
+
+/* The logo ships on a black background; screen blending drops the black so
+   the lettering sits directly on the gameplay shot behind it. */
+.banner-logo {
+  display: block;
+  width: min(560px, 90%);
+  height: auto;
+  margin-left: -2%;
+  mix-blend-mode: screen;
+}
+
+.banner-lede {
+  max-width: 40rem;
+  margin: 1.25rem 0 0;
+  font-size: clamp(1.05rem, 1.5vw, 1.25rem);
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.banner-ctas {
+  margin-top: 2rem;
+}
+
+.block-head {
+  margin: clamp(72px, 10vw, 128px) 0 2.25rem;
+}
+
+/* ---------- Features ---------- */
+.features {
+  display: grid;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  @media (min-width: 640px) {
+    grid-template-columns: repeat(2, 1fr);
   }
 
-  :host ::ng-deep {
-    .p-card {
-      box-shadow:
-        0 4px 6px -1px rgba(0, 0, 0, 0.1),
-        0 2px 4px -1px rgba(0, 0, 0, 0.06);
-      border-radius: var(--radius);
-    }
-
-    .p-card-header {
-      border-top-left-radius: var(--radius);
-      border-top-right-radius: var(--radius);
-    }
-
-    .p-carousel {
-      .p-carousel-content {
-        display: flex;
-        align-items: center;
-      }
-
-      .p-carousel-indicators {
-        padding: 1rem;
-      }
-    }
-
-    .p-image {
-      img {
-        border-radius: 1rem;
-        transition: transform 0.3s ease;
-      }
-
-      img:hover {
-        transform: scale(1.02);
-      }
-    }
+  @media (min-width: 1000px) {
+    grid-template-columns: repeat(4, 1fr);
   }
+}
 
-  .video-wrapper {
-    position: relative;
+.feature {
+  padding: 1.5rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+  line-height: 1.45;
+  color: var(--text);
+}
+
+/* ---------- Trailers ---------- */
+.trailers {
+  padding: clamp(1rem, 3vw, 2rem);
+}
+
+.video-item {
+  margin: 0;
+  padding: 0 0.5rem;
+
+  video {
+    display: block;
     width: 100%;
-    max-width: 800px;
-    margin: 0 auto;
-
-    video {
-      display: block;
-      max-height: 450px;
-      margin: 0 auto;
-    }
+    max-height: 520px;
+    border-radius: 20px;
+    background: #000;
   }
 
-  .screenshot-item {
-    overflow: hidden;
-    border-radius: 1rem;
+  figcaption {
+    margin-top: 0.9rem;
+    text-align: center;
+    font-weight: 600;
+    color: var(--text-muted);
+  }
+}
+
+:host ::ng-deep {
+  .p-carousel-indicator button {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--surface-2);
+  }
+
+  .p-carousel-indicator-active button {
+    background: var(--accent);
+  }
+
+  .p-carousel-prev-button,
+  .p-carousel-next-button {
+    color: var(--text);
+  }
+
+  .p-image img {
+    display: block;
+    width: 100%;
+    border-radius: 20px;
+    transition: transform 0.6s cubic-bezier(0.2, 0.7, 0.2, 1);
+    cursor: zoom-in;
+  }
+
+  .shot:hover .p-image img {
+    transform: scale(1.04);
+  }
+}
+
+/* ---------- Screenshots ---------- */
+.shots {
+  display: grid;
+  gap: 1rem;
+
+  @media (min-width: 640px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: 1000px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.shot {
+  overflow: hidden;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+}
+
+.shot-wide {
+  @media (min-width: 1000px) {
+    grid-column: span 2;
+    grid-row: span 2;
+  }
+}
+
+@keyframes ken-burns {
+  from {
+    transform: scale(1.35) translate(0, 0);
+  }
+  to {
+    transform: scale(1.45) translate(-2%, -1%);
   }
 }

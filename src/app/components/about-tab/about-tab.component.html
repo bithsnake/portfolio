@@ -1,108 +1,118 @@
-<div class="about-container">
-  <p-card class="mb-4">
-    <ng-template pTemplate="header">
-      <div class="section-header text-center py-4">
-        <h2 class="text-3xl font-bold heading-accent mb-2">
-          {{ "about.title" | translate }}
-        </h2>
-        <div class="flex justify-center">
-          <img
-            src="portfolio_pic.png"
-            [alt]="'about.portraitAlt' | translate"
-            class="w-48 h-48 md:w-56 md:h-56 object-cover rounded-2xl shadow-lg border border-slate-700"
-          />
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-glow" aria-hidden="true"></div>
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <span class="eyebrow" reveal>{{ "about.hero.eyebrow" | translate }}</span>
+      <h1 class="display" reveal [revealDelay]="80">
+        {{ "about.hero.line1" | translate }}<br />
+        <span class="gradient-text">{{ "about.hero.line2" | translate }}</span>
+      </h1>
+      <p class="lede" reveal [revealDelay]="160">
+        {{ "about.hero.lede" | translate }}
+      </p>
+      <div class="hero-ctas" reveal [revealDelay]="240">
+        <a href="#experience" class="pill pill-primary">
+          {{ "about.hero.ctaWork" | translate }}
+          <i class="fa-solid fa-arrow-down" aria-hidden="true"></i>
+        </a>
+        <a [href]="linkedInUrl" target="_blank" rel="noopener noreferrer" class="pill">
+          <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
+          LinkedIn
+        </a>
+        <a [href]="githubUrl" target="_blank" rel="noopener noreferrer" class="pill">
+          <i class="fa-brands fa-github" aria-hidden="true"></i>
+          GitHub
+        </a>
+      </div>
+    </div>
+
+    <div class="portrait" reveal [revealDelay]="200">
+      <div class="portrait-ring" aria-hidden="true"></div>
+      <img src="portfolio_pic.png" [alt]="'about.portraitAlt' | translate" />
+      <div class="portrait-badge">
+        <span class="live-dot" aria-hidden="true"></span>
+        {{ "about.hero.badge" | translate }}
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Statement: words fill with colour as the reader scrolls past -->
+<section class="statement wrap" aria-label="Statement">
+  <p class="statement-text">{{ "about.statement" | translate }}</p>
+</section>
+
+<!-- Bento -->
+<section class="section bento-section">
+  <div class="wrap">
+    <span class="eyebrow" reveal>{{ "about.glance.eyebrow" | translate }}</span>
+    <h2 class="headline" reveal>{{ "about.glance.title" | translate }}</h2>
+
+    <div class="bento">
+      <article class="card glow-border tile tile-stack" reveal>
+        <h3 class="tile-title">{{ "about.tiles.stack.title" | translate }}</h3>
+        <p class="tile-text">{{ "about.tiles.stack.text" | translate }}</p>
+        <ol class="layers">
+          @for (layer of layers; track layer; let i = $index) {
+            <li class="layer" [style.--i]="i">
+              <span>{{ "about.layers." + layer | translate }}</span>
+            </li>
+          }
+        </ol>
+      </article>
+
+      <article class="card glow-border tile tile-realtime" reveal [revealDelay]="80">
+        <div class="pulse-wire" aria-hidden="true">
+          <span class="node"></span>
+          <span class="wire"><span class="packet"></span><span class="packet p2"></span></span>
+          <span class="node"></span>
         </div>
-      </div>
-    </ng-template>
-    <ng-template pTemplate="content">
-      <div class="space-y-6">
-        <section>
-          <h3 class="text-2xl font-semibold heading-accent mb-3">
-            {{ "about.summary.title" | translate }}
-          </h3>
-          <p class="text-body leading-relaxed">
-            {{ "about.summary.text" | translate }}
-          </p>
-        </section>
+        <h3 class="tile-title">{{ "about.tiles.realtime.title" | translate }}</h3>
+        <p class="tile-text">{{ "about.tiles.realtime.text" | translate }}</p>
+      </article>
 
-        <section>
-          <div class="flex flex-col md:flex-row items-center gap-6">
-            <p class="text-body leading-relaxed">
-              {{ "about.focus.text" | translate }}
-            </p>
-          </div>
-        </section>
+      <article class="card glow-border tile tile-game" reveal [revealDelay]="120">
+        <div class="tile-game-bg" style="--img: url(https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1269910/ss_84f281dba17b2667fb7c433ea52c30d895952543.1920x1080.jpg)" aria-hidden="true"></div>
+        <div class="tile-game-copy">
+          <h3 class="tile-title">{{ "about.tiles.game.title" | translate }}</h3>
+          <p class="tile-text">{{ "about.tiles.game.text" | translate }}</p>
+          <a [href]="steamGameUrl" target="_blank" rel="noopener noreferrer" class="tile-link">
+            <i class="fa-brands fa-steam" aria-hidden="true"></i>
+            {{ "about.tiles.game.cta" | translate }}
+          </a>
+        </div>
+      </article>
 
-        <section class="text-left">
-          <h3 class="text-2xl font-semibold heading-accent mb-3">
-            {{ "about.skills.title" | translate }}
-          </h3>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div class="pl-2">
-              <h4 class="font-semibold heading-accent-soft mb-2">
-                {{ "about.skills.web.title" | translate }}
-              </h4>
-              <ul class="list-disc list-inside text-body space-y-1 pl-4">
-                <li>{{ "about.skills.web.item1" | translate }}</li>
-                <li>{{ "about.skills.web.item2" | translate }}</li>
-                <li>{{ "about.skills.web.item3" | translate }}</li>
-                <li>{{ "about.skills.web.item4" | translate }}</li>
-              </ul>
-            </div>
-            <div class="pl-2">
-              <h4 class="font-semibold heading-accent-soft mb-2">
-                {{ "about.skills.game.title" | translate }}
-              </h4>
-              <ul class="list-disc list-inside text-body space-y-1 pl-4">
-                <li>{{ "about.skills.game.item1" | translate }}</li>
-                <li>{{ "about.skills.game.item2" | translate }}</li>
-                <li>{{ "about.skills.game.item3" | translate }}</li>
-                <li>{{ "about.skills.game.item4" | translate }}</li>
-                <li>{{ "about.skills.game.item5" | translate }}</li>
-                <li>{{ "about.skills.game.item6" | translate }}</li>
-              </ul>
-            </div>
-          </div>
-        </section>
+      <article class="card glow-border tile tile-number" reveal [revealDelay]="80">
+        <span class="big-number gradient-text">400+</span>
+        <p class="tile-text">{{ "about.tiles.commits" | translate }}</p>
+      </article>
 
-        <section>
-          <h3 class="text-2xl font-semibold heading-accent mb-3">
-            {{ "about.experience.title" | translate }}
-          </h3>
-          <p class="text-body leading-relaxed mb-3">
-            {{ "about.experience.text1" | translate }}
-          </p>
-          <p class="text-body leading-relaxed">
-            {{ "about.experience.text2" | translate }}
-          </p>
-        </section>
+      <article class="card glow-border tile tile-number" reveal [revealDelay]="140">
+        <span class="big-number gradient-text">15+</span>
+        <p class="tile-text">{{ "about.tiles.codebases" | translate }}</p>
+      </article>
 
-        <section>
-          <h3 class="text-2xl font-semibold heading-accent mb-3">
-            {{ "about.connect.title" | translate }}
-          </h3>
-          <div class="flex md:flex-wrap gap-4 flex-col md:flex-row">
-            <a
-              pButton
-              [label]="'about.actions.linkedin' | translate"
-              icon="pi pi-linkedin"
-              [href]="linkedInUrl()"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="p-button-raised p-button-primary"
-            ></a>
-            <a
-              pButton
-              [label]="'about.actions.steam' | translate"
-              icon="pi pi-steam"
-              [href]="steamGameUrl()"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="p-button-raised p-button-secondary"
-            ></a>
-          </div>
-        </section>
-      </div>
-    </ng-template>
-  </p-card>
-</div>
+      <article class="card glow-border tile tile-langs" reveal [revealDelay]="200">
+        <h3 class="tile-title">{{ "about.tiles.langs.title" | translate }}</h3>
+        <div class="lang-row">
+          <span>Svenska</span><span>English</span><span>Suomi</span>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Tech marquee -->
+<section class="marquee" [attr.aria-label]="'about.techLabel' | translate">
+  <div class="marquee-track">
+    @for (pass of [0, 1]; track pass) {
+      <ul class="marquee-row" [attr.aria-hidden]="pass === 1 ? 'true' : null">
+        @for (t of tech; track t) {
+          <li>{{ t }}</li>
+        }
+      </ul>
+    }
+  </div>
+</section>

@@ -1,81 +1,89 @@
-.projects-container {
-  .mb-6 {
-    margin-bottom: 1.5rem;
+:host {
+  display: block;
+}
+
+.projects {
+  padding-top: 0;
+}
+
+.project-list {
+  display: grid;
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.project {
+  padding: clamp(1.25rem, 3vw, 2rem);
+}
+
+.project-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.project-title {
+  margin: 0;
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  color: var(--text);
+}
+
+.project-desc {
+  margin: 0.4rem 0 0;
+  color: var(--text-muted);
+}
+
+.project-ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.iframe-shell {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 11;
+  border-radius: 20px;
+  overflow: hidden;
+  background: var(--surface);
+  border: 1px solid var(--border);
+}
+
+.project-iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.desktop-only {
+  display: none;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 1.25rem;
+  border-radius: 16px;
+  font-weight: 500;
+  color: var(--text);
+  background: var(--surface);
+  border: 1px solid var(--border);
+
+  i {
+    color: var(--accent);
   }
+}
 
-  :host ::ng-deep {
-    .p-card {
-      box-shadow:
-        0 4px 6px -1px rgba(0, 0, 0, 0.1),
-        0 2px 4px -1px rgba(0, 0, 0, 0.06);
-      border-radius: var(--radius);
-    }
-
-    .p-card-header {
-      border-top-left-radius: var(--radius);
-      border-top-right-radius: var(--radius);
-    }
-  }
-
-  .project-card {
-    overflow: hidden;
-  }
-
-  .iframe-shell {
-    position: relative;
-    width: 100%;
-    padding-top: 85%;
-    border-radius: 1rem;
-    overflow: hidden;
-    background: rgba(0, 0, 0, 0.12);
-  }
-
-  .project-iframe {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    border: 0;
-  }
-
-  .desktop-only-message {
+@media (max-width: 768px) {
+  .hide-on-mobile {
     display: none;
-    width: 100%;
-    padding: 1rem 1.25rem;
-    border-radius: 1rem;
-    background: rgba(59, 130, 246, 0.12);
-    border: 1px solid rgba(59, 130, 246, 0.35);
-    color: var(--app-text);
-    font-weight: 500;
-    align-items: center;
-    gap: 0.75rem;
   }
 
-  .desktop-only-icon {
-    width: 32px;
-    height: 32px;
-    border-radius: 9999px;
-    background: #3b82f6;
-    color: #ffffff;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.95rem;
-    flex: 0 0 auto;
-  }
-
-  .desktop-only-text {
-    display: inline-flex;
-    align-items: center;
-  }
-
-  @media (max-width: 768px) {
-    .hide-on-mobile {
-      display: none;
-    }
-
-    .show-on-mobile {
-      display: flex;
-    }
+  .show-on-mobile {
+    display: flex;
   }
 }

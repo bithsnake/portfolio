@@ -1,6 +1,21 @@
-<footer class="bg-slate-950 text-slate-100 py-6 px-4 mt-8">
-  <div class="container mx-auto max-w-6xl text-center">
-    <p class="text-lg">
+<footer class="footer">
+  <div class="footer-glow" aria-hidden="true"></div>
+  <div class="wrap footer-inner">
+    <h2 class="display footer-title">
+      {{ "footer.title1" | translate }}<br />
+      <span class="gradient-text">{{ "footer.title2" | translate }}</span>
+    </h2>
+    <div class="footer-ctas">
+      <a [href]="linkedInUrl" target="_blank" rel="noopener noreferrer" class="pill pill-primary">
+        <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
+        {{ "footer.cta" | translate }}
+      </a>
+      <a [href]="githubUrl" target="_blank" rel="noopener noreferrer" class="pill">
+        <i class="fa-brands fa-github" aria-hidden="true"></i>
+        GitHub
+      </a>
+    </div>
+    <p class="footer-copy">
       {{ "footer.copyright" | translate: { year: currentYear() } }}
     </p>
   </div>
