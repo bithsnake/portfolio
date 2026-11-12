@@ -1,71 +1,197 @@
 {
   "app": {
     "title": "Kimmo Savilampi - Portfolio",
-    "subtitle": "Full Stack -kehittäjä & pelintekijä",
-    "theme": {
-      "switchToLight": "Vaihda vaaleaan",
-      "switchToDark": "Vaihda tummaan",
-      "loading": "Ladataan..."
+    "subtitle": "Full stack -kehittäjä & pelintekijä",
+    "nav": {
+      "about": "Minusta",
+      "experience": "Kokemus",
+      "game": "Peli",
+      "projects": "Projektit"
     },
-    "tabs": {
-      "about": "Tietoa minusta",
-      "game": "Oma pelini",
-      "projects": "Muut projektit"
+    "theme": {
+      "switchToLight": "Vaihda vaaleaan tilaan",
+      "switchToDark": "Vaihda tummaan tilaan",
+      "loading": "Ladataan..."
     },
     "language": {
       "label": "Kieli",
       "english": "Englanti",
       "swedish": "Ruotsi",
-      "finnish": "Suomi"
+      "finnish": "Suomi",
+      "ukrainian": "Ukraina"
     }
   },
   "about": {
-    "title": "Tietoa minusta",
-    "portraitAlt": "Kuva Kimmo Savilammesta",
-    "summary": {
-      "title": "Ammatillinen yhteenveto",
-      "text": "Olen intohimoinen full stack -kehittäjä ja pelintekijä, jolla on pitkä kokemus web-kehityksestä ja pelisuunnittelusta. Osaamiseni kattaa modernit web-teknologiat kuten Angular, React ja .NET sekä pelikehityksen Unitylla ja muilla pelimoottoreilla."
+    "portraitAlt": "Kimmo Savilammen muotokuva",
+    "hero": {
+      "eyebrow": "Full stack -kehittäjä · Pelintekijä",
+      "line1": "Kimmo Savilampi.",
+      "line2": "Tietokannasta pikseliin.",
+      "lede": "Rakennan digitaalista terveydenhuoltoa doktor.se:ssä — reaaliaikaisia potilassovelluksia, Node.js-palveluita, PostgreSQL:ää ja Kubernetesia AWS:ssä. Omistan ominaisuudet ensimmäisestä luonnoksesta palvelimeen asti, ja olen julkaissut oman pelini Steamissa.",
+      "ctaWork": "Katso työni",
+      "badge": "Rakentamassa doktor.se:ssä"
     },
-    "focus": {
-      "text": "Keskityn rakentamaan selkeitä, responsiivisia käyttöliittymiä ja luotettavia full stack -ratkaisuja. Pidän monimutkaisten ideoiden muuttamisesta viimeistellyiksi kokemuksiksi, jotka tuntuvat nopeilta ja intuitiivisilta."
+    "statement": "En pysähdy omaan kerrokseeni. Seuraan ongelmaa käyttöliittymän, rajapinnan, tietokannan ja pilven läpi — kunnes se on oikeasti ratkaistu.",
+    "glance": {
+      "eyebrow": "Lyhyesti",
+      "title": "Yksi kehittäjä. Koko pino."
     },
-    "skills": {
-      "title": "Tekniset taidot",
-      "web": {
-        "title": "Web-kehitys",
-        "item1": "Angular, React, TypeScript",
-        "item2": ".NET Core, C#, ASP.NET",
-        "item3": "HTML5, CSS3, Tailwind CSS",
-        "item4": "RESTful API:t, mikropalvelut"
+    "layers": {
+      "ui": "Käyttöliittymä — React, Next.js, Angular",
+      "api": "Rajapinnat — Node.js, Fastify, Express",
+      "realtime": "Reaaliaika — WebSockets, SSE",
+      "data": "Data — PostgreSQL, Redux",
+      "cloud": "Pilvi — Kubernetes, AWS, GitOps"
+    },
+    "tiles": {
+      "stack": {
+        "title": "Oikeasti full stack",
+        "text": "Ominaisuuden jokainen kerros saman ihmisen rakentamana ja omistamana — mikään ei katoa tiimien väliin."
+      },
+      "realtime": {
+        "title": "Reaaliaikainen alusta asti",
+        "text": "Live-päivitykset WebSocketeilla ja Server-Sent Eventsillä, rakennettu kestämään katkenneet yhteydet."
       },
       "game": {
-        "title": "Pelikehitys",
-        "item1": "Game Maker",
-        "item2": "Pixi.js",
-        "item3": "Pelisuunnittelu & tasosuunnittelu",
-        "item4": "2D-grafiikka & animaatio",
-        "item5": "Musiikki & ääniefektit",
-        "item6": "Steam-integraatio & julkaisu"
+        "title": "Julkaistu peli Steamissa",
+        "text": "Aria Disconnect — suunnittelu, koodi, grafiikka ja musiikki ideasta kauppasivuun.",
+        "cta": "Katso Steamissa"
+      },
+      "commits": "committia ensimmäisten viiden kuukauden aikana doktor.se:ssä",
+      "codebases": "koodikantaa webissä, backendissä ja infrassa",
+      "langs": {
+        "title": "Työkieleni"
       }
     },
-    "experience": {
-      "title": "Kokemus & osaaminen",
-      "text1": "Vahva tausta sekä yritysohjelmistokehityksessä että indie-pelien tekemisessä tuo jokaiseen projektiin ainutlaatuisen näkökulman. Kokemukseni kattaa skaalautuvien web-sovellusten kehittämisen, kiinnostavien käyttöliittymien suunnittelun ja pelien rakentamisen.",
-      "text2": "Olen erityisen ylpeä indie-pelistani \"Aria Disconnect\", Metroidvania-tyylisestä toimintaseikkailusta cyberpunk-teemalla, joka tuo esiin osaamiseni pelisuunnittelussa, ohjelmoinnissa ja projektinhallinnassa."
+    "techLabel": "Teknologiat, joilla työskentelen"
+  },
+  "experience": {
+    "eyebrow": "Kokemus",
+    "title1": "Rakennan digitaalista terveydenhuoltoa",
+    "title2": "doktor.se:ssä.",
+    "stackLabel": "Teknologiat",
+    "role": {
+      "title": "Full Stack -kehittäjä",
+      "period": "2026 – nyt",
+      "current": "Nyt",
+      "text": "doktor.se on ruotsalainen digitaalinen terveyspalvelu. Työskentelen potilassovellusten, niiden taustalla olevien mikropalveluiden, pilvialustan ja analytiikan parissa — ja vien ominaisuudet ideasta tuotantoon."
     },
-    "connect": {
-      "title": "Ota yhteyttä"
+    "stats": {
+      "codebases": {
+        "value": "15+",
+        "label": "koodikantaa, joihin olen osallistunut"
+      },
+      "commits": {
+        "value": "400+",
+        "label": "toimitettua committia"
+      },
+      "services": {
+        "value": "6",
+        "label": "backend-palvelua, joissa olen työskennellyt"
+      },
+      "layers": {
+        "value": "UI → pilvi",
+        "label": "vastuu alusta loppuun"
+      }
     },
-    "buttons": {
-      "outlined": "Testipainike (ääriviiva)",
-      "test": "Testipainike",
-      "save": "Tallenna",
-      "delete": "Poista",
-      "cancel": "Peruuta"
+    "areas": {
+      "backend": "Backend",
+      "cloud": "Pilvi",
+      "frontend": "Frontend",
+      "data": "Data",
+      "fullstack": "Full stack"
     },
-    "actions": {
-      "linkedin": "LinkedIn-profiili",
-      "steam": "Pelini Steamissa"
+    "cases": {
+      "eyebrow": "Valittuja töitä",
+      "title": "Mitä olen rakentanut.",
+      "realtime": {
+        "title": "Reaaliaikaiset järjestelmät",
+        "summary": "Ominaisuuksia, jotka päivittyvät heti kun jotain tapahtuu — potilassovelluksessa, sisäisissä työkaluissa ja itse rakentamissani palvelimissa.",
+        "p1": "Potilassovellus kuuntelee WebSocket-tapahtumia: uudet, perutut ja siirretyt varaukset päivittävät käyttöliittymän ja postilaatikon heti.",
+        "p2": "Rakensin Node.js-WebSocket-palvelimen (ws + Express), jossa on broadcast-chat, reaaliaikainen läsnäolo ja uloskirjautumisilmoitukset.",
+        "p3": "Valitsin Server-Sent Eventsin sydämenlyönneillä ja automaattisella uudelleenyhdistämisellä palveluun, joka nukkuu käyttämättömänä — ja dokumentoin, miksi se voittaa WebSocketit siinä."
+      },
+      "auth": {
+        "title": "Autentikointipalvelu alusta asti",
+        "summary": "Itsenäinen Node.js-palvelu, joka hallitsee tilit, kirjautumisen ja reaaliaikaisen yhteistyön sisäisellä hallinta-alustalla.",
+        "p1": "Fastify vastausskeemoilla, joten salasanatiivisteet eivät voi koskaan vahingossa vuotaa rajapinnasta.",
+        "p2": "Allekirjoitetut, vanhenevat tokenit, scrypt-salasanatiivisteet ja varmennetut webhook-allekirjoitukset.",
+        "p3": "Siirsin tilit levyllä olevasta tiedostosta PostgreSQL:ään — ja korjasin katoavat käyttäjät, kun sovellus pyöri useassa kontissa."
+      },
+      "cloud": {
+        "title": "Pilvi ja infrastruktuuri",
+        "summary": "Siirsin julkisen doktor.se-sivuston Kubernetesiin ja rakensin sen ympärille AWS-infrastruktuurin koodina.",
+        "p1": "Siirto AWS EKS:ään GitOps-julkaisuilla Fluxin kautta — Git päättää, mitä tuotannossa pyörii.",
+        "p2": "AWS CDK -pinot Lambda-funktioilla ja varmennettu sähköpostidomain SES:ssä.",
+        "p3": "Ajonaikainen konfiguraatio ja tietoturvaskannausten korjaukset, jotta yksi konttikuva toimii turvallisesti kaikissa ympäristöissä."
+      },
+      "services": {
+        "title": "Mikropalvelut ja rajapinnat",
+        "summary": "Työtä useissa Node.js-palveluissa mikropalveluarkkitehtuurissa — SQL:stä API-gatewayhin.",
+        "p1": "Klinikoiden vapaiden aikojen rajapinta SQL-kyselyineen ja testeineen varauspalvelussa.",
+        "p2": "Tekstiviestit ja transaktionaalinen sähköposti: API-reitit, pohjat ja työkalu, jolla kumppaniapteekit voivat viestiä potilaille.",
+        "p3": "Palvelinpuolen feature flagit ja tuotedata, joka kulkee palvelusta hallintapaneeliin ja potilassovellukseen."
+      },
+      "admin": {
+        "title": "Rokotusten hallinta-alusta",
+        "summary": "Sisäinen työkalu, jolla henkilökunta pyörittää valtakunnallista rokotuspalvelua — rakennettu headless-CMS:n päälle.",
+        "p1": "Toimittajat hallitsevat klinikoita, hintoja ja kampanjoita massamuokkauksella ja kuvien latauksella.",
+        "p2": "Konfliktien tunnistus, kun kaksi ihmistä muokkaa samaa klinikkaa, ja skeemavalidointi ennen jokaista tallennusta.",
+        "p3": "Automaatio: kampanjat vanhenevat itsestään, aukioloajat synkronoituvat ja klinikat tuodaan massana taulukoista."
+      },
+      "inbox": {
+        "title": "Sovelluksen postilaatikko alusta loppuun",
+        "summary": "Uusi postilaatikko potilassovellukseen API-asiakkaasta näkymiin ja live-päivityksiin.",
+        "p1": "Postilaatikkonäkymät lukemattomien merkillä, monivalinnalla ja poistolla.",
+        "p2": "Lukemattomien määrä päivittyy livenä, kun varaustapahtumia saapuu WebSocketien kautta.",
+        "p3": "Korjasin CORS-preflightin API-gatewayssa, jotta verkkosovellus tavoitti uuden palvelun."
+      },
+      "analytics": {
+        "title": "Tietosuoja edellä tehty analytiikka",
+        "summary": "Tuoteanalytiikka ja istuntotallennus potilaan hoitopolussa — paljastamatta arkaluonteisia terveystietoja.",
+        "p1": "Tapahtumaseuranta monivaiheisessa hoitopolussa.",
+        "p2": "Istuntotallennus, joka peittää tekstin ja estää kuvat, videot ja lataukset.",
+        "p3": "Etäohjattu käyttöönotto feature flageilla, valmisteltu tietosuoja- ja juridista tarkastusta varten."
+      },
+      "media": {
+        "title": "Monipuolinen media keskusteluissa",
+        "summary": "Potilaat voivat lähettää videoita ja katsoa mediaa koko näytöllä keskusteluissa hoitohenkilökunnan kanssa.",
+        "p1": "Videotuki latauskomponentissa.",
+        "p2": "Kuvien ja videoiden koko näytön esikatselu pyyhkäisyllä ja nuolinavigoinnilla.",
+        "p3": "Näppäimistöllä ja ruudunlukijalla toimivat ohjaimet."
+      }
+    },
+    "skills": {
+      "eyebrow": "Osaaminen",
+      "title": "Mitä hallitsen.",
+      "expert": "Asiantuntija",
+      "advanced": "Edistynyt",
+      "groups": {
+        "backend": "Backend ja reaaliaika",
+        "frontend": "Frontend",
+        "cloud": "Pilvi ja DevOps",
+        "quality": "Data, laatu ja toimitus"
+      }
+    },
+    "principles": {
+      "eyebrow": "Periaatteet",
+      "title": "Näin työskentelen.",
+      "ownership": {
+        "title": "Vastuu alusta loppuun",
+        "text": "Tietokantaskeemasta käyttäjän näkemään pikseliin — ja julkaisu siinä välissä."
+      },
+      "secure": {
+        "title": "Turvallinen oletuksena",
+        "text": "Suunnittelen niin, että virheet ovat mahdottomia, eivät vain epätodennäköisiä."
+      },
+      "measure": {
+        "title": "Mittaa, sitten päätä",
+        "text": "Toimitan seurannan ja feature flagien kanssa, ja annan datan ohjata seuraavaa askelta."
+      },
+      "clarity": {
+        "title": "Jätä se selkeämmäksi",
+        "text": "Kommentit kertovat miksi, ja ohjeet auttavat seuraavaa kehittäjää etenemään nopeammin."
+      }
     }
   },
   "game": {
@@ -82,10 +208,12 @@
       "item5": "🎵 Tunnelmallinen soundtrack",
       "item6": "📖 Tarina elämästä ja kuolemasta, pitkälti ilman sanoja",
       "item7": "🎮 Täysi ohjain­tuki (Xbox-ohjaimet)",
-      "item8": "🏆 Yksinpelikokemus Steam-saavutuksilla"
+      "item8": "🏆 Yksinpelikokemus Steam-saavutuksilla",
+      "eyebrow": "Ominaisuudet"
     },
     "trailers": {
-      "title": "Trailerit & pelikuva"
+      "title": "Trailerit & pelikuva",
+      "eyebrow": "Trailerit"
     },
     "video": {
       "unsupported": "Selaimesi ei tue videon toistoa."
@@ -98,21 +226,29 @@
       "alt3": "Aria Disconnect kuvakaappaus 3",
       "alt4": "Aria Disconnect kuvakaappaus 4",
       "alt5": "Aria Disconnect kuvakaappaus 5",
-      "alt6": "Aria Disconnect kuvakaappaus 6"
-    }
+      "alt6": "Aria Disconnect kuvakaappaus 6",
+      "eyebrow": "Galleria"
+    },
+    "eyebrow": "Minun pelini",
+    "cta": "Hanki Steamista"
   },
   "projects": {
-    "title": "Muut projektit",
-    "subtitle": "Valikoima pienempiä kokeiluja ja web-pelejä.",
+    "title": "Muuta, mitä olen tehnyt.",
+    "subtitle": "Pienempiä kokeiluja ja selainpelejä — pelattavissa suoraan tässä.",
     "desktopOnly": "Tämä projekti toimii vain tietokoneella.",
     "viewOnGithub": "Näytä GitHubissa",
     "spinMaster": {
       "title": "Spin Master",
       "description": "Nopea, arcade-tyylinen spinner-peli yksinkertaisilla ohjauksilla. Rakennettu Pixi.js:llä",
       "iframeTitle": "Spin Master -live-demo"
-    }
+    },
+    "eyebrow": "Sivuprojektit",
+    "play": "Pelaa"
   },
   "footer": {
-    "copyright": "© {{year}} Kimmo Savilampi. Kaikki oikeudet pidätetään."
+    "copyright": "© {{year}} Kimmo Savilampi. Kaikki oikeudet pidätetään.",
+    "title1": "Rakennetaan",
+    "title2": "jotain hienoa.",
+    "cta": "Ota yhteyttä LinkedInissä"
   }
 }

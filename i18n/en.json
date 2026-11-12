@@ -2,70 +2,196 @@
   "app": {
     "title": "Kimmo Savilampi - Portfolio",
     "subtitle": "Full Stack Developer & Game Creator",
-    "theme": {
-      "switchToLight": "Switch to Light",
-      "switchToDark": "Switch to Dark",
-      "loading": "Loading..."
+    "nav": {
+      "about": "About",
+      "experience": "Experience",
+      "game": "Game",
+      "projects": "Projects"
     },
-    "tabs": {
-      "about": "About Me",
-      "game": "My Game",
-      "projects": "Other Projects"
+    "theme": {
+      "switchToLight": "Switch to light mode",
+      "switchToDark": "Switch to dark mode",
+      "loading": "Loading..."
     },
     "language": {
       "label": "Language",
       "english": "English",
       "swedish": "Swedish",
-      "finnish": "Finnish"
+      "finnish": "Finnish",
+      "ukrainian": "Ukrainian"
     }
   },
   "about": {
-    "title": "About Me",
     "portraitAlt": "Portrait of Kimmo Savilampi",
-    "summary": {
-      "title": "Professional Summary",
-      "text": "I am a passionate Full Stack Developer and Game Creator with extensive experience in web development and game design. My expertise spans across modern web technologies, including Angular, React, and .NET, as well as game development using Unity and various game engines."
+    "hero": {
+      "eyebrow": "Full Stack Developer · Game Creator",
+      "line1": "Kimmo Savilampi.",
+      "line2": "From database to pixel.",
+      "lede": "I build digital healthcare at doktor.se — real-time patient apps, Node.js services, PostgreSQL and Kubernetes on AWS. I own features from the first sketch to the server they run on, and I have shipped my own game on Steam.",
+      "ctaWork": "See my work",
+      "badge": "Building at doktor.se"
     },
-    "focus": {
-      "text": "I focus on crafting clean, responsive interfaces and building reliable full-stack systems. I enjoy turning complex ideas into polished experiences that feel fast and intuitive."
+    "statement": "I don't stop at my layer. I follow a problem through the UI, the API, the database and the cloud — until it's solved for real.",
+    "glance": {
+      "eyebrow": "At a glance",
+      "title": "One developer. The whole stack."
     },
-    "skills": {
-      "title": "Technical Skills",
-      "web": {
-        "title": "Web Development",
-        "item1": "Angular, React, TypeScript",
-        "item2": ".NET Core, C#, ASP.NET",
-        "item3": "HTML5, CSS3, Tailwind CSS",
-        "item4": "RESTful APIs, Microservices"
+    "layers": {
+      "ui": "Interface — React, Next.js, Angular",
+      "api": "APIs — Node.js, Fastify, Express",
+      "realtime": "Real-time — WebSockets, SSE",
+      "data": "Data — PostgreSQL, Redux",
+      "cloud": "Cloud — Kubernetes, AWS, GitOps"
+    },
+    "tiles": {
+      "stack": {
+        "title": "Full stack, for real",
+        "text": "Every layer of a feature, built and owned by the same person — so nothing gets lost between teams."
+      },
+      "realtime": {
+        "title": "Real-time by design",
+        "text": "Live updates with WebSockets and Server-Sent Events, built to survive dropped connections."
       },
       "game": {
-        "title": "Game Development",
-        "item1": "Game Maker",
-        "item2": "Pixi.js",
-        "item3": "Game Design & Level Design",
-        "item4": "2D Graphics & Animation",
-        "item5": "Music & Sound Effects",
-        "item6": "Steam Integration & Publishing"
+        "title": "Shipped a game on Steam",
+        "text": "Aria Disconnect — design, code, art and music, from idea to store page.",
+        "cta": "View on Steam"
+      },
+      "commits": "commits in my first five months at doktor.se",
+      "codebases": "codebases across web, mobile backend and infra",
+      "langs": {
+        "title": "I work in"
       }
     },
-    "experience": {
-      "title": "Experience & Expertise",
-      "text1": "With a strong background in both enterprise software development and independent game creation, I bring a unique perspective to every project. My experience includes developing scalable web applications, creating engaging user interfaces, and building games.",
-      "text2": "I'm particularly proud of my indie game \"Aria Disconnect,\" a Metroidvania-style action-adventure game with a cyberpunk theme, showcasing my abilities in game design, programming, and project management."
+    "techLabel": "Technologies I work with"
+  },
+  "experience": {
+    "eyebrow": "Experience",
+    "title1": "Building digital healthcare",
+    "title2": "at doktor.se.",
+    "stackLabel": "Technologies",
+    "role": {
+      "title": "Full Stack Developer",
+      "period": "2026 – present",
+      "current": "Now",
+      "text": "doktor.se is a Swedish digital healthcare provider. I work across the patient apps, the microservices behind them, the cloud platform and the analytics — and take features from idea to production."
     },
-    "connect": {
-      "title": "Connect With Me"
+    "stats": {
+      "codebases": {
+        "value": "15+",
+        "label": "codebases contributed to"
+      },
+      "commits": {
+        "value": "400+",
+        "label": "commits shipped"
+      },
+      "services": {
+        "value": "6",
+        "label": "backend services touched"
+      },
+      "layers": {
+        "value": "UI → Cloud",
+        "label": "end-to-end ownership"
+      }
     },
-    "buttons": {
-      "outlined": "Test Button (Outlined)",
-      "test": "Test Button",
-      "save": "Save",
-      "delete": "Delete",
-      "cancel": "Cancel"
+    "areas": {
+      "backend": "Backend",
+      "cloud": "Cloud",
+      "frontend": "Frontend",
+      "data": "Data",
+      "fullstack": "Full stack"
     },
-    "actions": {
-      "linkedin": "LinkedIn Profile",
-      "steam": "My Game on Steam"
+    "cases": {
+      "eyebrow": "Selected work",
+      "title": "What I have built.",
+      "realtime": {
+        "title": "Real-time systems",
+        "summary": "Features that update the moment something happens — in the patient app, in internal tools and in servers I built myself.",
+        "p1": "The patient app listens to WebSocket events: new, cancelled and moved bookings update the UI and refresh the inbox instantly.",
+        "p2": "Built a WebSocket server in Node.js (ws + Express) with broadcast chat, live user presence and logout notifications.",
+        "p3": "Picked Server-Sent Events with heartbeats and auto-reconnect for a service that sleeps when idle — and documented why it beats WebSockets there."
+      },
+      "auth": {
+        "title": "Auth service, built from scratch",
+        "summary": "A standalone Node.js service that owns accounts, sign-in and live collaboration for an internal admin platform.",
+        "p1": "Fastify with response schemas, so password hashes can never leak out of an endpoint by mistake.",
+        "p2": "Signed, expiring tokens, scrypt password hashing and verified webhook signatures.",
+        "p3": "Moved accounts from a file on disk to PostgreSQL — fixing users that vanished when the app ran on several containers."
+      },
+      "cloud": {
+        "title": "Cloud & infrastructure",
+        "summary": "Moved the public doktor.se website to Kubernetes and built the AWS infrastructure around it as code.",
+        "p1": "Migration to AWS EKS with GitOps deploys through Flux — Git decides what runs in production.",
+        "p2": "AWS CDK stacks with Lambda functions and a verified mail domain in SES.",
+        "p3": "Runtime configuration and security-scan fixes, so one container image runs safely in every environment."
+      },
+      "services": {
+        "title": "Microservices & APIs",
+        "summary": "Work across several Node.js services in a microservice architecture — from SQL to API gateway.",
+        "p1": "Clinic availability endpoint with SQL queries and tests in the booking service.",
+        "p2": "SMS and transactional email: API routes, templates and a tool for partner pharmacies to message patients.",
+        "p3": "Server-side feature flags, and product data carried from service to admin panel to patient app."
+      },
+      "admin": {
+        "title": "Vaccination admin platform",
+        "summary": "An internal tool where staff run a nationwide vaccination service — built on top of a headless CMS.",
+        "p1": "Editors manage clinics, prices and campaigns, with bulk edit and image upload.",
+        "p2": "Conflict detection when two people edit the same clinic, and schema validation before every write.",
+        "p3": "Automation: campaigns expire on their own, opening hours sync, clinics import in bulk from spreadsheets."
+      },
+      "inbox": {
+        "title": "App inbox, end to end",
+        "summary": "A new inbox in the patient app, from API client to screens to live updates.",
+        "p1": "Inbox screens with unread badge, multi-select and delete.",
+        "p2": "Unread count refreshes live when booking events arrive over WebSockets.",
+        "p3": "Fixed CORS preflight in the API gateway so the web app could reach the new service."
+      },
+      "analytics": {
+        "title": "Privacy-first analytics",
+        "summary": "Product analytics and session replay in the patient care flow — without exposing sensitive health data.",
+        "p1": "Event tracking across a multi-step care flow.",
+        "p2": "Session replay that masks text and blocks images, video and uploads.",
+        "p3": "Remote rollout control with feature flags, prepared for privacy and legal review."
+      },
+      "media": {
+        "title": "Rich media in conversations",
+        "summary": "Patients can send video and view media full screen in their conversations with clinicians.",
+        "p1": "Video support in the upload widget.",
+        "p2": "Full-screen image and video preview with swipe and arrow navigation.",
+        "p3": "Keyboard and screen-reader friendly controls."
+      }
+    },
+    "skills": {
+      "eyebrow": "Skills",
+      "title": "What I master.",
+      "expert": "Expert",
+      "advanced": "Advanced",
+      "groups": {
+        "backend": "Backend & real-time",
+        "frontend": "Frontend",
+        "cloud": "Cloud & DevOps",
+        "quality": "Data, quality & delivery"
+      }
+    },
+    "principles": {
+      "eyebrow": "Principles",
+      "title": "How I work.",
+      "ownership": {
+        "title": "Own it end to end",
+        "text": "From the database schema to the pixel the user sees — and the deploy in between."
+      },
+      "secure": {
+        "title": "Secure by default",
+        "text": "Design so mistakes are impossible, not just unlikely."
+      },
+      "measure": {
+        "title": "Measure, then decide",
+        "text": "Ship with tracking and feature flags, and let data guide the next step."
+      },
+      "clarity": {
+        "title": "Leave it clearer",
+        "text": "Comments that explain why, and guides that help the next developer move faster."
+      }
     }
   },
   "game": {
@@ -82,10 +208,12 @@
       "item5": "🎵 Atmospheric soundtrack",
       "item6": "📖 Story about life and death, told mostly without words",
       "item7": "🎮 Full controller support (Xbox controllers)",
-      "item8": "🏆 Single-player with Steam Achievements"
+      "item8": "🏆 Single-player with Steam Achievements",
+      "eyebrow": "Features"
     },
     "trailers": {
-      "title": "Game Trailers & Gameplay"
+      "title": "Game Trailers & Gameplay",
+      "eyebrow": "Trailers"
     },
     "video": {
       "unsupported": "Your browser does not support the video tag."
@@ -98,21 +226,29 @@
       "alt3": "Aria Disconnect Screenshot 3",
       "alt4": "Aria Disconnect Screenshot 4",
       "alt5": "Aria Disconnect Screenshot 5",
-      "alt6": "Aria Disconnect Screenshot 6"
-    }
+      "alt6": "Aria Disconnect Screenshot 6",
+      "eyebrow": "Gallery"
+    },
+    "eyebrow": "My game",
+    "cta": "Get it on Steam"
   },
   "projects": {
-    "title": "Other Projects",
-    "subtitle": "A selection of smaller experiments and web games.",
+    "title": "More things I made.",
+    "subtitle": "Smaller experiments and web games — playable right here.",
     "desktopOnly": "This project is available on desktop only.",
     "viewOnGithub": "View on GitHub",
     "spinMaster": {
       "title": "Spin Master",
       "description": "A fast, arcade-style spinner game with simple controls. Built in Pixi.js",
       "iframeTitle": "Spin Master live demo"
-    }
+    },
+    "eyebrow": "Side projects",
+    "play": "Play"
   },
   "footer": {
-    "copyright": "© {{year}} Kimmo Savilampi. All rights reserved."
+    "copyright": "© {{year}} Kimmo Savilampi. All rights reserved.",
+    "title1": "Let's build",
+    "title2": "something great.",
+    "cta": "Connect on LinkedIn"
   }
 }
